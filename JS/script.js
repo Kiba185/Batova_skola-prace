@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Spustíme fade-out
       content.classList.add('fade-out');
   
-      // Počkejme až na konec přechodu (0.5s), pak teprve nahrajeme nový obsah
+      // Počkejme až na konec přechodu (0.2s), pak teprve nahrajeme nový obsah
       setTimeout(() => {
         fetch(url)
           .then(res => res.text())
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
               });
             }
           });
-      }, 500); // musí být stejně dlouhé jako v CSS
+      }, 300); // musí být stejně dlouhé jako v CSS 
     }
   
     document.querySelectorAll('a[data-link]').forEach(link => {

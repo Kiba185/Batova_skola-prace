@@ -13,9 +13,10 @@ body {
     background-color: var(--dark-blue);
 }
 
+/*obsah jednotlivých podstránek*/
 #content {
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 200ms ease-in-out;
 }
 
 #content.fade-out {
@@ -34,15 +35,7 @@ body {
     
 }
 
-/* header {
-    position: relative;
-    background-image:linear-gradient( rgba(255,0,0,0)40px,var(--dark-blue)), url(../images/background3.jpg);
-    background-size: cover; 
-    height: 100vh;
-    width: 100%;
-    top: 0;
-} */
-
+/*header pro hlavní stránku*/
 body[data-homepage="true"] header {
     position: relative;
     background-image:linear-gradient( rgba(255,0,0,0)40px,var(--dark-blue)), url(../images/background3.jpg);
@@ -51,10 +44,14 @@ body[data-homepage="true"] header {
     width: 100%;
     top: 0;
 }
-
+/*header pro podstránky*/
 body:not([data-homepage="true"]) header{
-    height: 60vh;
-    background-image:linear-gradient( rgba(255,0,0,0)60px,var(--dark-blue)), url(../images/background3.jpg);
+    position: relative;
+    background-image:linear-gradient( rgba(255,0,0,0)40px,var(--dark-blue)), url(../images/background3.jpg);
+    background-size: cover; 
+    height: 40vh;
+    width: 100%;
+    top: 0;
 }
 
 .header-nav {
@@ -122,12 +119,25 @@ body:not([data-homepage="true"]) header{
     cursor: default;
 }
 
-.heading h1 {
+body[data-homepage="true"] .heading h1{
     position: absolute;
     width: 100%;
     height: 100%;
     color: var(--white);
     font-size: 120px;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--dark-blue);
+    font-weight: 900;
+    text-shadow: 0 0 60px rgb(0, 0, 0);
+}
+
+body:not([data-homepage="true"]) .heading h1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+    font-size: 80px;
     text-align: center;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: var(--dark-blue);
@@ -160,6 +170,42 @@ main {
     height: 100vh;
     background-color: var(--dark-blue);
     margin: 0;
+}
+
+.introduction {
+    position: relative;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+    top:10%;
+
+}
+
+.introduction h2{
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    font-size: 60px;
+    color: var(--white);
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--dark-gray);
+    font-weight: 900;
+    text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
+
+}
+
+.introduction p{
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    top:30%;
+    font-size: 20px;
+    color: var(--white);
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-weight: 900;
+    text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
 }
 
 footer {
