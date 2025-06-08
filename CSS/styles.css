@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: var(--dark-blue);
+    background-color: linear-gradient(#6b89c0, var(--dark-blue));
 }
 
 #content.fade-out {
@@ -161,7 +161,7 @@ header .nav-link:hover {
 main {
     position: relative;
     width: 100%;
-    height: 3100px;
+    height: 2800px;
     background-color: var(--dark-blue);
     margin: 0;
     color: var(--white);
@@ -202,7 +202,7 @@ main {
 .timeline {
     position: relative;
     width: 75%;
-    height: 80%;
+    height: 72%;
     margin: auto;
     top: 10%;
 }
@@ -233,7 +233,7 @@ main {
 
 .timeline-item {
     position: relative;
-    width: 45%;
+    width: 43%;
     height: 10%;
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
@@ -247,11 +247,10 @@ main {
     margin-right: auto;
 }
 
+/* --- texty na právé straně --- */
 .timeline-list :nth-child(even) p{
-    position: absolute;
     text-align: right;
-    left: 0;
-    width: 60%;
+    right: 58%;
     margin-right: 2%;
 }
 
@@ -259,11 +258,10 @@ main {
     text-align: right;
 }
 
+/* --- texty na levé straně --- */
 .timeline-list :nth-child(odd) p{
-    position: absolute;
     text-align: left;
-    left: 51%;
-    width: 60%;
+    left: 58%;
     margin-left: 2%;
 }
 
@@ -272,17 +270,26 @@ main {
 }
 
 .timeline-list p {
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
+    position: absolute;
+    width: 45%;
+    font-family: 'Courier New';
+    font-size: 17px;
 }
 
 .timeline-image {
     position: absolute;
-    height: 100%;
+    width: 50%;
+    top: 13.9%;
 }
 
+/* --- obrázeky na pravé straně --- */
 .timeline-list :nth-child(even) .timeline-image {
-    right: 0;
+    right: 8%;
+}
+
+/* --- obrázeky na levé straně --- */
+.timeline-list :nth-child(odd) .timeline-image {
+    left: 8%;
 }
 
 .timeline-graph {
@@ -311,56 +318,56 @@ main {
 .timeline-graph :nth-child(2) {
     height: 5px;
     background-color: var(--white);
-    top: 0.9%;
+    top: 1.4%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
 .timeline-graph :nth-child(3) {
     height: 5px;
     background-color: var(--white);
-    top: 14.5%;
+    top: 14.3%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
 .timeline-graph :nth-child(4) {
     height: 5px;
     background-color: var(--white);
-    top: 28.1%;
+    top: 27.1%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
 .timeline-graph :nth-child(5) {
     height: 5px;
     background-color: var(--white);
-    top: 41.8%;
+    top: 40%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
 .timeline-graph :nth-child(6) {
     height: 5px;
     background-color: var(--white);
-    top: 55.3%;
+    top: 52.8%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
 .timeline-graph :nth-child(7) {
     height: 5px;
     background-color: var(--white);
-    top: 69%;
+    top: 65.7%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
 .timeline-graph :nth-child(8) {
     height: 5px;
     background-color: var(--white);
-    top: 82.6%;
+    top: 78.55%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
 .timeline-graph :nth-child(9) {
     height: 5px;
     background-color: var(--white);
-    top: 96.2%;
+    top: 91.4%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
 }
