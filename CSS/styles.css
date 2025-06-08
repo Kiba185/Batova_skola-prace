@@ -161,7 +161,7 @@ header .nav-link:hover {
 main {
     position: relative;
     width: 100%;
-    height: 2700px;
+    height: 3100px;
     background-color: var(--dark-blue);
     margin: 0;
     color: var(--white);
@@ -201,8 +201,8 @@ main {
 
 .timeline {
     position: relative;
-    width: 60%;
-    height: 60%;
+    width: 75%;
+    height: 80%;
     margin: auto;
     top: 10%;
 }
@@ -210,7 +210,7 @@ main {
 .timeline p {
     position: relative;
     width: 100%;
-    height: 50px;
+    height: 2%;
     text-align: center;
     font-size: 30px;
     color: var(--white);
@@ -221,7 +221,7 @@ main {
 .timeline-list {
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 98%;
     list-style: none;
     text-decoration: none;
     margin: 0;
@@ -234,7 +234,7 @@ main {
 .timeline-item {
     position: relative;
     width: 45%;
-    height: 200px;
+    height: 10%;
     font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -251,7 +251,7 @@ main {
     position: absolute;
     text-align: right;
     left: 0;
-    width: 49%;
+    width: 60%;
     margin-right: 2%;
 }
 
@@ -260,9 +260,11 @@ main {
 }
 
 .timeline-list :nth-child(odd) p{
-    text-align: left;
     position: absolute;
+    text-align: left;
     left: 51%;
+    width: 60%;
+    margin-left: 2%;
 }
 
 .timeline-list :nth-child(odd) h3{
@@ -276,7 +278,7 @@ main {
 
 .timeline-image {
     position: absolute;
-    width: 49%;
+    height: 100%;
 }
 
 .timeline-list :nth-child(even) .timeline-image {
@@ -286,11 +288,11 @@ main {
 .timeline-graph {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: 98%;
     z-index: 1;
 }
 .timeline-graph :nth-child(n+1){
-    width: 13%;
+    width: 10%;
 }
 
 .timeline-graph :nth-child(n) {
