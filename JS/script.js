@@ -2,14 +2,14 @@ const places = {
   skola: {
     title: 'Baťova škola práce',
     description: 'Vzdělávací instituce založená Tomášem Baťou v roce 1925, která kombinovala výuku s praktickou prací.',
-    beforeImg: '../images/skola-then.jpg',
-    afterImg: '../images/skola-now.jpg'
+    beforeImg: '../images/skola-old.jpg',
+    afterImg: '../images/skola-new.jpg'
   },
   domky: {
     title: 'Baťovy domky',
     description: 'Typické cihlové domky pro zaměstnance Baťových závodů, postavené jako součást sociálního programu firmy.',
-    beforeImg: '../images/domky-then.jpg',
-    afterImg: '../images/domky-now.jpg'
+    beforeImg: '../images/domky-old.jpg',
+    afterImg: '../images/domky-new.jpg'
   }
 };
 

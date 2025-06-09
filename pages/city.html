@@ -33,32 +33,29 @@
             <h1>BAŤOVA ŠKOLA PRÁCE</h1>
         </section>
     </header>
-    <main class="history">
+    <main class="city">
         <section class="introduction">
-            <h2>Historie</h2>
+            <h2>Město</h2>
             <p>„Baťova škola práce nebyla jen vzdělávací instituce. Byla součástí komplexního systému, který formoval celé město Zlín – jeho vzhled, strukturu i komunitní život.“</p>
         </section>
         <section class="map-section">
             <div class="map-container">
-                <img src="mapa-zlin.jpg" alt="Mapa Zlína" class="map-image">
-                <div class="hotspot" data-key="skola" style="top: 30%; left: 40%;" onclick="showPlace('skola')"></div>
-                <div class="hotspot" data-key="domky" style="top: 50%; left: 60%;" onclick="showPlace('domky')"></div>
+                <img src="../images/mapa-zlin.jpg" alt="Mapa Zlína" class="map-image">
+                <div class="hotspot" data-key="skola" style="top: 30%; left: 40%;" onclick="showPlace('skola')" title="Baťova škola"></div>
+                <div class="hotspot" data-key="domky" style="top: 50%; left: 60%;" onclick="showPlace('domky')" title="Baťovy domky"></div>
             </div>
-            <div class="details no-background" id="details">
-                <div class="details-grid">
-                    <div class="text-info">
-                        <h2 id="place-title">Vyberte místo</h2>
-                        <p id="place-description"></p>
+            <div class="details" id="details">
+                <div class="place-info" id="place-info">
+                    <h2 id="place-title"></h2>
+                    <p id="place-description"></p>
+                </div>
+                <div class="slider-container" id="slider" style="display:none;">
+                    <div class="before-after">
+                        <img id="before-img" class="before" src="" alt="Tehdy">
+                        <img id="after-img" class="after" src="" alt="Dnes">
+                        <div class="slider-handle" style="left: 50%;"></div>
                     </div>
-                    <div class="slider-container" id="slider" style="display:none;">
-                        <div class="before-after">
-                            <img id="before-img" class="before" src="" alt="Tehdy">
-                            <img id="after-img" class="after" src="" alt="Dnes">
-                            <div class="slider-handle" style="left: 50%;">
-                                <img src="slider.png" alt="Slider" class="slider-icon">
-                            </div>
-                        </div>
-                    </div>
+                    <input type="range" min="0" max="100" value="50" oninput="adjustSlider(this.value)">
                 </div>
             </div>
         </section>

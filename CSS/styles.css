@@ -161,7 +161,6 @@ header .nav-link:hover {
 main {
     position: relative;
     width: 100%;
-    height: 2800px;
     background-image: linear-gradient(var(--dark-blue), #556d9b);
     margin: 0;
     color: var(--white);
@@ -198,6 +197,10 @@ main {
 }
 
 /* --- history.html --- */
+
+.history {
+    height: 2800px;
+}
 
 .timeline {
     position: relative;
@@ -384,17 +387,22 @@ main {
 }
 
 /* --- city.html --- */
-body {
-  font-family: 'Jaro', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
+
+.city {
+        height: 1700px;
+}
+
+.map-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: var(--white);
+  top: 8%;
 }
 
 .map-container {
   position: relative;
-  width: 100%;
-  max-width: 80%;
+  max-width: 60%;
   margin: 0 auto;
 }
 
@@ -405,7 +413,7 @@ body {
 
 .hotspot {
   position: absolute;
-  background: red;
+  background: rgb(78, 25, 25);
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -417,21 +425,20 @@ body {
 .hotspot.active::after {
   content: '';
   position: absolute;
-  top: -20px;
-  left: -20px;
+  top: -310%;
+  left: -68.9%;
   width: 40px;
-  height: 40px;
+  height: 60px;
   background: url('../images/avatar.png') no-repeat center center / cover;
-  border-radius: 50%;
   pointer-events: none;
   z-index: 11;
 }
 
 .details {
-  max-width: 1000px;
+  max-width: 80%;
   margin: 20px auto;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  display: flex;
 }
 
 .details h2 {
@@ -474,8 +481,8 @@ body {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: #000;
+  width: 5px;
+  background: #272727;
   z-index: 5;
   cursor: ew-resize;
 }
@@ -483,6 +490,7 @@ body {
 input[type=range] {
   width: 100%;
   margin-top: 10px;
+  display: none;
 }
 
 
