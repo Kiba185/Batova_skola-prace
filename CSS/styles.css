@@ -2,15 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Jaro, sans-serif;
-    --dark-blue: #263042;
+    --dark-blue: #384969;
     --light-gray: #c2c2c2;
-    --dark-gray: #2e2e2e;
+    --dark-gray: #3f3f3f;
     --white: #e6e6e6;
 }
 
 body {
-    background-color: linear-gradient(#6b89c0, var(--dark-blue));
+    background-color: var(--dark-blue);
 }
 
 #content.fade-out {
@@ -37,6 +36,7 @@ header {
     height: 100vh;
     width: 100%;
     top: 0;
+    font-family: Jaro;
 }
 /*header pro podstránky*/
 .history-page header{
@@ -162,7 +162,7 @@ main {
     position: relative;
     width: 100%;
     height: 2800px;
-    background-color: var(--dark-blue);
+    background-image: linear-gradient(var(--dark-blue), #556d9b);
     margin: 0;
     color: var(--white);
 }
@@ -182,7 +182,7 @@ main {
     text-align: center;
     font-weight: 900;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New';
     margin-bottom: 20px;
 }
 
@@ -191,7 +191,7 @@ main {
     top:30%;
     font-size: 20px;
     color: var(--white);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Courier;
     text-align: center;
     font-weight: 900;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
@@ -216,6 +216,12 @@ main {
     color: var(--white);
     font-weight: 900;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
+    font-family: Jaro;
+}
+
+.timeline h3 {
+    font-family: Jaro;
+    font-size: 27px;
 }
 
 .timeline-list {
@@ -236,7 +242,6 @@ main {
     width: 43%;
     height: 10%;
     font-size: 20px;
-    font-family: 'Courier New', Courier, monospace;
 }
 
 .timeline-list :nth-child(odd){
@@ -272,14 +277,15 @@ main {
 .timeline-list p {
     position: absolute;
     width: 45%;
-    font-family: 'Courier New';
     font-size: 17px;
+    top: 23%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .timeline-image {
     position: absolute;
     width: 50%;
-    top: 13.9%;
+    top: 22%;
 }
 
 /* --- obrázeky na pravé straně --- */
@@ -298,9 +304,6 @@ main {
     height: 98%;
     z-index: 1;
 }
-.timeline-graph :nth-child(n+1){
-    width: 10%;
-}
 
 .timeline-graph :nth-child(n) {
     position: absolute;
@@ -318,59 +321,136 @@ main {
 .timeline-graph :nth-child(2) {
     height: 5px;
     background-color: var(--white);
-    top: 1.4%;
+    top: 1.7%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 41.5%;
 }
 .timeline-graph :nth-child(3) {
     height: 5px;
     background-color: var(--white);
-    top: 14.3%;
+    top: 14.6%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 33%;
 }
 .timeline-graph :nth-child(4) {
     height: 5px;
     background-color: var(--white);
-    top: 27.1%;
+    top: 27.4%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 35.5%;
 }
 .timeline-graph :nth-child(5) {
     height: 5px;
     background-color: var(--white);
-    top: 40%;
+    top: 40.3%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 25.2%;
 }
 .timeline-graph :nth-child(6) {
     height: 5px;
     background-color: var(--white);
-    top: 52.8%;
+    top: 53.1%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 33%;
 }
 .timeline-graph :nth-child(7) {
     height: 5px;
     background-color: var(--white);
-    top: 65.7%;
+    top: 66%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 28%;
 }
 .timeline-graph :nth-child(8) {
     height: 5px;
     background-color: var(--white);
-    top: 78.55%;
+    top: 78.8%;
     left: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 34.4%;
 }
 .timeline-graph :nth-child(9) {
     height: 5px;
     background-color: var(--white);
-    top: 91.4%;
+    top: 91.7%;
     right: 50%;
     box-shadow:  5px 5px 20px rgba(255, 255, 255, 0.2);
+    width: 32.7%;
 }
+
+/* --- city.html --- */
+.map-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.map-image {
+  width: 100%;
+  display: block;
+}
+
+.hotspot {
+  position: absolute;
+  background: red;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.details {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.details h2 {
+  margin-top: 0;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.before-after {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.before, .after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+}
+
+.before {
+  clip-path: inset(0 50% 0 0);
+  z-index: 2;
+}
+
+.after {
+  z-index: 1;
+}
+
+input[type=range] {
+  width: 100%;
+} 
 
 /* --- footer --- */
 footer {
@@ -381,7 +461,9 @@ footer {
     font-size: 20px;
     margin: 0;
     bottom: 0;
-    background-image:linear-gradient(var(--dark-blue),var(--dark-gray)125px);
+    /* background-image:linear-gradient(var(--dark-blue), var(--dark-gray)); */
+    background-color: var(--dark-gray);
+    box-shadow: 20px 20px 50px 30px rgba(0, 0, 0, 0.308);
 }
 
 .footer-nav {

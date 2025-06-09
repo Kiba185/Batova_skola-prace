@@ -1,6 +1,74 @@
-<main>
-    <section class="introduction">
-        <h2>Město</h2>
-        <p>Baťova škola práce je vzdělávací instituce, která se zaměřuje na rozvoj dovedností a znalostí v oblasti podnikání a managementu.</p>
-    </section>
-</main>
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/queries.css">
+    <link href='https://fonts.googleapis.com/css?family=Jaro' rel='stylesheet'>
+    <script src="../JS/script.js" defer></script>
+
+    <title>Baťova škola práce</title>
+</head>
+<body class="history-page">
+    <header>
+        <nav class="header-nav">
+            <div class="header-nav-left">
+                <a href="index.html"  data-link class="logo">
+                    <img src="../images/logo.png" alt="Logo Baťovy školy práce" class="logo">
+                </a>
+            </div>
+            <div class="header-nav-right">
+                <ul class="nav-links">
+                    <li class="nav-link"><a href="history.html" data-link>HISTORIE</a></li>
+                    <li class="nav-link"><a href="city.html" data-link>MĚSTO</a></li>
+                    <li class="nav-link"><a href="personalities.html" data-link>OSOBNOSTI</a></li>
+                    <li class="nav-link"><a href="present.html" data-link>SOUČASNOST</a></li>
+                    <li class="nav-link"><a href="interesting.html" data-link>ZAJÍMAVOSTI</a></li>
+                    <li class="nav-link"><a href="galery.html" data-link>GALERIE</a></li>
+                </ul>
+            </div>
+        </nav>
+        <section class="heading">
+            <h1>BAŤOVA ŠKOLA PRÁCE</h1>
+        </section>
+    </header>
+    <main class="history">
+        <section class="introduction">
+            <h2>Historie</h2>
+            <p>„Baťova škola práce nebyla jen vzdělávací instituce. Byla součástí komplexního systému, který formoval celé město Zlín – jeho vzhled, strukturu i komunitní život.“</p>
+        </section>
+        <section class="map-section">
+            <div class="map-container">
+                <img src="mapa-zlin.jpg" alt="Mapa Zlína" class="map-image">
+                <div class="hotspot" style="top: 30%; left: 40%;" onclick="showPlace('skola')" title="Baťova škola"></div>
+                <div class="hotspot" style="top: 50%; left: 60%;" onclick="showPlace('domky')" title="Baťovy domky"></div>
+            </div>
+            <div class="details" id="details">
+            <h2 id="place-title">Vyberte místo</h2>
+            <p id="place-description"></p>
+            <div class="slider-container" id="slider" style="display:none;">
+                <div class="before-after">
+                <img id="before-img" class="before" src="" alt="Tehdy">
+                <img id="after-img" class="after" src="" alt="Dnes">
+                </div>
+                <input type="range" min="0" max="100" value="50" oninput="adjustSlider(this.value)">
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav class="footer-nav">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="history.html" data-link>HISTORIE</a></li>
+                <li class="nav-link"><a href="city.html" data-link>MĚSTO</a></li>
+                <li class="nav-link"><a href="personalities.html" data-link>OSOBNOSTI</a></li>
+                <li class="nav-link"><a href="present.html" data-link>SOUČASNOST</a></li>
+                <li class="nav-link"><a href="interesting.html" data-link>ZAJÍMAVOSTI</a></li>
+                <li class="nav-link"><a href="galery.html" data-link>GALERIE</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 Baťova škola práce. Všechna práva vyhrazena.</p>
+    </footer>
+</body>
+</html>
