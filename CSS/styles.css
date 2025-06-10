@@ -217,7 +217,7 @@ main {
     width: 75%;
     height: 72%;
     margin: auto;
-    top: 3%;
+    top: 10%;
 }
 
 .timeline p {
@@ -423,7 +423,7 @@ main {
 
 .hotspot {
   position: absolute;
-  background: rgb(78, 25, 25);
+  background: rgb(151, 151, 151);
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -595,24 +595,26 @@ input[type=range] {
 /* --- present.html --- */
 
 .present {
-  height: 1500px;
-
+  height: 1000px;
 }
+
+.present .introduction p {
+  width: 50%;
+  
+}
+
 .present-pillars {
   position: relative;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   gap: 30px;
-  max-width: 1000px;
-  margin: 100px auto 60px auto;
-  width: 80%;
+  margin: 10% auto;
 }
 
 .pillar-card {
-  position: absolute;
-  background-color: rgba(36, 36, 36, 0.301);
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(101, 101, 101, 0.3);
+  box-shadow: 0 4px 10px rgba(63, 63, 63, 0.3);
   width: 30%;
   padding: 20px;
   text-align: center;
@@ -622,18 +624,20 @@ input[type=range] {
 
 .pillar-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 8px 20px rgba(39, 39, 39, 0.7);
 }
 
 .pillar-card img {
   width: 100%;
+  height: 300px;
   border-radius: 8px;
   margin-bottom: 15px;
   object-fit: cover;
-  height: 160px;
+  box-shadow: 0 4px 10px rgba(63, 63, 63, 0.3);
 }
 
 .pillar-card h3 {
+  color: #f0a500;
   margin-bottom: 10px;
 }
 
@@ -664,6 +668,9 @@ input[type=range] {
   border-color: #f0a500;
 }
 
+.pillar-card a {
+  text-decoration: none;
+}
 
 /* --- footer --- */
 footer {

@@ -177,4 +177,16 @@ function hidePerson() {
   });
 }
 
+function focusPresentCard(card) {
+  const allCards = document.querySelectorAll('.present-card');
+  allCards.forEach(c => {
+    c.classList.remove('focused');
+    c.style.zIndex = 1;
+    c.style.transform = 'translateX(-50%) translateZ(0)';
+  });
+
+  card.classList.add('focused');
+  card.style.zIndex = 10;
+  card.style.transform = 'translateX(-50%) translateZ(150px)';
+}
 
