@@ -76,3 +76,105 @@ window.addEventListener('DOMContentLoaded', () => {
     adjustSlider(value);
   }
 });
+
+const persons = {
+  tomas_bata: {
+    name: "Tomáš Baťa",
+    description: "Zakladatel firmy Baťa a průkopník firemního vzdělávání mladých lidí.",
+    image: "../images/tomas_bata.jpg"
+  },
+  gahura: {
+    name: "František Lydie Gahura",
+    description: "Hlavní architekt Zlína – navrhl mnoho klíčových staveb Baťovy éry.",
+    image: "../images/gahura.jpg"
+  },
+  hanzelka: {
+    name: "Jiří Hanzelka",
+    description: "Cestovatel a absolvent Baťovy školy práce. Proslul cestami po světě s Miroslavem Zikmundem.",
+    image: "../images/hanzelka.jpg"
+  },
+  zikmund: {
+    name: "Miroslav Zikmund",
+    description: "Slavný cestovatel a spisovatel, propagátor Baťovy školy ve světě.",
+    image: "../images/zikmund.jpg"
+  },
+  antonin_bata: {
+    name: "Jan Antonín Baťa",
+    description: "Mladší bratr Tomáše Bati, pokračovatel jeho odkazu a rozšiřovatel firmy Baťa po světě.",
+    image: "../images/antonin_bata.jpg"
+  },
+  tomasik: {
+    name: "Ladislav Tomášik",
+    description: "Významný pedagog Baťovy školy práce, který formoval generace studentů.",
+    image: "../images/tomasik.jpg"
+  },
+    boruvka: {
+    name: "Otakar Borůvka",
+    description: "Matematik a pedagog, který se podílel na výuce a vývoji vzdělávacích programů v Baťově škole.",
+    image: "images/boruvka.jpg"
+  },
+  tous: {
+    name: "Antonín Touš",
+    description: "Dlouholetý ředitel Baťovy školy práce, klíčový organizátor její struktury a rozvoje.",
+    image: "images/tous.jpg"
+  },
+  horak: {
+    name: "Karel Horák",
+    description: "Odborník na výrobu a průmyslovou organizaci, jeden z vedoucích mistrů ve škole.",
+    image: "images/horak.jpg"
+  }
+};
+
+function showPerson(key) {
+  hidePerson(); // nejprve schováme vše ostatní
+
+  const person = persons[key];
+  if (!person) return;
+
+  document.getElementById("person-card-" + key).style.height = "500px";
+  document.getElementById("person-card-" + key).style.backgroundColor = "rgb(15, 15, 15)";
+  document.getElementById("person-img-" + key).style.height = "100%";
+  document.getElementById("person-img-" + key).style.width = "100%";
+  document.getElementById("person-img-" + key).style.opacity = "15%";
+  document.getElementById("person-name-" + key).textContent = person.name;
+  document.getElementById("person-name-" + key).style.top = "15%";
+  document.getElementById("person-name-" + key).style.left = "50%";
+  document.getElementById("person-name-" + key).style.transform = "translateX(-50%)";
+  document.getElementById("person-name-" + key).style.width = "80%";
+  document.getElementById("person-name-" + key).style.fontSize = "35px";
+  document.getElementById("person-description-" + key).textContent = person.description;
+  document.getElementById("person-description-" + key).style.display = "block";
+}
+
+function hidePerson() {
+  const cards = document.querySelectorAll('[id^="person-card-"]');
+  cards.forEach(card => {
+    const key = card.id.replace('person-card-', '');
+    document.getElementById("person-card-" + key).style.height = "";
+    document.getElementById("person-card-" + key).style.backgroundColor = "";
+
+    const img = document.getElementById("person-img-" + key);
+    if (img) {
+      img.style.height = "";
+      img.style.width = "";
+      img.style.opacity = "";
+    }
+
+    const name = document.getElementById("person-name-" + key);
+    if (name) {
+      name.style.top = "";
+      name.style.left = "";
+      name.style.transform = "";
+      name.style.width = "";
+      name.style.fontSize = "";
+    }
+
+    const desc = document.getElementById("person-description-" + key);
+    if (desc) {
+      desc.style.display = "none";
+      desc.textContent = "";
+    }
+  });
+}
+
+

@@ -1,6 +1,101 @@
-<main>
-    <section class="introduction">
-        <h2>Osobnosti</h2>
-        <p>Baťova škola práce je vzdělávací instituce, která se zaměřuje na rozvoj dovedností a znalostí v oblasti podnikání a managementu.</p>
-    </section>
-</main>
+<!DOCTYPE html>
+<html lang="cz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" href="../CSS/queries.css">
+    <link href='https://fonts.googleapis.com/css?family=Jaro' rel='stylesheet'>
+    <script src="../JS/script.js" defer></script>
+
+    <title>Baťova škola práce</title>
+</head>
+<body class="history-page">
+    <header>
+        <nav class="header-nav">
+            <div class="header-nav-left">
+                <a href="index.html"  data-link class="logo">
+                    <img src="../images/logo.png" alt="Logo Baťovy školy práce" class="logo">
+                </a>
+            </div>
+            <div class="header-nav-right">
+                <ul class="nav-links">
+                    <li class="nav-link"><a href="history.html" data-link>HISTORIE</a></li>
+                    <li class="nav-link"><a href="city.html" data-link>MĚSTO</a></li>
+                    <li class="nav-link"><a href="personalities.html" data-link>OSOBNOSTI</a></li>
+                    <li class="nav-link"><a href="present.html" data-link>SOUČASNOST</a></li>
+                    <li class="nav-link"><a href="interesting.html" data-link>ZAJÍMAVOSTI</a></li>
+                    <li class="nav-link"><a href="galery.html" data-link>GALERIE</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="personalities subpage">
+        <section class="introduction">
+            <h2>Osobnosti Baťovy éry</h2>
+            <p>Baťova škola práce a rozvoj Zlína byly výsledkem práce vizionářů, architektů, pedagogů a průmyslníků, kteří svou činností ovlivnili celé generace.</p>
+        </section>
+        <section class="personalities-grid">
+            <div class="person-card" id="person-card-tomas_bata" onclick="showPerson('tomas_bata')">
+                <img src="../images/tomas_bata.jpg" alt="Tomáš Baťa" id="person-img-tomas_bata">
+                <h3 id="person-name-tomas_bata">Tomáš Baťa</h3>
+                <p id="person-description-tomas_bata"></p>
+            </div>
+            <div class="person-card" id="person-card-gahura" onclick="showPerson('gahura')">
+                <img src="../images/gahura.jpg" alt="František Gahura" id="person-img-gahura">
+                <h3 id="person-name-gahura">František Gahura</h3>
+                <p id="person-description-gahura"></p>
+            </div>
+            <div class="person-card" id="person-card-hanzelka" onclick="showPerson('hanzelka')">
+                <img src="../images/hanzelka.jpg" alt="Jiří Hanzelka" id="person-img-hanzelka">
+                <h3 id="person-name-hanzelka">Jiří Hanzelka</h3>
+                <p id="person-description-hanzelka"></p>
+            </div>
+            <div class="person-card" id="person-card-zikmund" onclick="showPerson('zikmund')">
+                <img src="../images/zikmund.jpg" alt="Miroslav Zikmund" id="person-img-zikmund">
+                <h3 id="person-name-zikmund">Miroslav Zikmund</h3>
+                <p id="person-description-zikmund"></p>
+            </div>
+            <div class="person-card" id="person-card-antonin_bata" onclick="showPerson('antonin_bata')">
+                <img src="../images/antonin_bata.jpg" alt="Jan Antonín Baťa" id="person-img-antonin_bata">
+                <h3 id="person-name-antonin_bata">Jan Antonín Baťa</h3>
+                <p id="person-description-antonin_bata"></p>
+            </div>
+            <div class="person-card" id="person-card-tomasik" onclick="showPerson('tomasik')">
+                <img src="../images/tomasik.jpg" alt="Ladislav Tomášik" id="person-img-tomasik">
+                <h3 id="person-name-tomasik">Ladislav Tomášik</h3>
+                <p id="person-description-tomasik"></p>
+            </div>
+            <div class="person-card" id="person-card-boruvka" onclick="showPerson('boruvka')">
+                <img src="../images/boruvka.jpg" alt="Otakar Borůvka" id="person-img-boruvka">
+                <h3 id="person-name-boruvka">Otakar Borůvka</h3>
+                <p id="person-description-boruvka"></p>
+            </div>
+            <div class="person-card" id="person-card-tous" onclick="showPerson('tous')">
+                <img src="../images/tous.jpg" alt="Antonín Touš" id="person-img-tous">
+                <h3 id="person-name-tous">Antonín Touš</h3>
+                <p id="person-description-tous"></p>
+            </div>
+            <div class="person-card" id="person-card-horak" onclick="showPerson('horak')">
+                <img src="../images/horak.jpg" alt="Karel Horák" id="person-img-horak">
+                <h3 id="person-name-horak">Karel Horák</h3>
+                <p id="person-description-horak"></p>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <nav class="footer-nav">
+            <ul class="nav-links">
+                <li class="nav-link"><a href="history.html" data-link>HISTORIE</a></li>
+                <li class="nav-link"><a href="city.html" data-link>MĚSTO</a></li>
+                <li class="nav-link"><a href="personalities.html" data-link>OSOBNOSTI</a></li>
+                <li class="nav-link"><a href="present.html" data-link>SOUČASNOST</a></li>
+                <li class="nav-link"><a href="interesting.html" data-link>ZAJÍMAVOSTI</a></li>
+                <li class="nav-link"><a href="galery.html" data-link>GALERIE</a></li>
+            </ul>
+        </nav>
+        <p>&copy; 2025 Baťova škola práce. Všechna práva vyhrazena.</p>
+    </footer>
+</body>
+</html>
