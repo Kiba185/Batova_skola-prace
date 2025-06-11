@@ -1,23 +1,9 @@
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelector('.header-nav .nav-links');
-
-// Toggle menu po kliknutí na hamburger
-hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('nav-active');
-
-  // ARIA atribut pro přístupnost
-  const expanded = hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
-  hamburger.setAttribute('aria-expanded', expanded);
-});
-
-// Umožní ovládat hamburger i klávesou Enter nebo Space (pro přístupnost)
-hamburger.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault();
-    hamburger.click();
-  }
-});
-
+function openMenu() {
+    document.getElementById('hamburger-menu').className = 'hamburger-menu show';
+}
+function closeMenu() {
+    document.getElementById('hamburger-menu').className = 'hamburger-menu hide';
+}
 const places = {
   skola: {
     title: 'Baťova škola práce',

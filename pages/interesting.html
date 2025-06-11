@@ -11,7 +11,7 @@
 
     <title>Baťova škola práce</title>
 </head>
-<body class="history-page">
+<body class="interesting subpage">
     <header>
         <nav class="header-nav">
             <div class="header-nav-left">
@@ -20,7 +20,7 @@
                 </a>
             </div>
             <div class="header-nav-right">
-                <ul class="nav-links">
+                <ul class="nav-links" id="nav-links">
                     <li class="nav-link"><a href="history.html" data-link>HISTORIE</a></li>
                     <li class="nav-link"><a href="city.html" data-link>MĚSTO</a></li>
                     <li class="nav-link"><a href="personalities.html" data-link>OSOBNOSTI</a></li>
@@ -28,6 +28,22 @@
                     <li class="nav-link"><a href="interesting.html" data-link>ZAJÍMAVOSTI</a></li>
                     <li class="nav-link"><a href="gallery.html" data-link>GALERIE</a></li>
                 </ul>
+            </div>
+            <div class="menu-toggle" onclick="openMenu()">☰</div>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="ham-left">
+                    <ul class="nav-links">
+                        <li class="nav-link"><a href="history.html" data-link>HISTORIE</a></li>
+                        <li class="nav-link"><a href="city.html" data-link>MĚSTO</a></li>
+                        <li class="nav-link"><a href="personalities.html" data-link>OSOBNOSTI</a></li>
+                        <li class="nav-link"><a href="present.html" data-link>SOUČASNOST</a></li>
+                        <li class="nav-link"><a href="interesting.html" data-link>ZAJÍMAVOSTI</a></li>
+                        <li class="nav-link"><a href="gallery.html" data-link>GALERIE</a></li>
+                    </ul>
+                </div>
+                <div class="ham-right" onclick="closeMenu()">
+                    <div class="ham-close" onclick="closeMenu()">✖</div>
+                </div>
             </div>
         </nav>
     </header>
@@ -72,7 +88,7 @@
                 <li class="nav-link"><a href="gallery.html" data-link>GALERIE</a></li>
             </ul>
         </nav>
-        <p>&copy; 2025 Baťova škola práce. Všechna práva vyhrazena.</p>
+        <p>&copy; 2025 Jakub Malota. Všechna práva vyhrazena.</p>
     </footer>
     <script src="minigame.js"></script>
 </body>

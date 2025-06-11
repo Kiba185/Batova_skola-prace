@@ -1,145 +1,301 @@
-/* Základní reset a proměnné */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    --dark-blue: #384969;
-    --light-gray: #c2c2c2;
-    --dark-gray: #3f3f3f;
-    --white: #e6e6e6;
-    --custom-shadow: 0 4px 10px rgba(63, 63, 63, 0.3);
-    --custom-background: rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  --dark-blue: #384969;
+  --light-gray: #c2c2c2;
+  --dark-gray: #3f3f3f;
+  --white: #e6e6e6;
+  --yellow: #f0a500;
+  --custom-shadow: 0 4px 10px rgba(63, 63, 63, 0.3);
+  --custom-background: rgba(255, 255, 255, 0.1);
 }
 
 body {
-    background-color: var(--dark-blue);
-    font-family: 'Courier New', Courier, monospace;
-    color: var(--white);
+  background-color: var(--dark-blue);
 }
 
-/* Logo */
+#content.fade-out {
+  opacity: 0;
+}
+  
 .logo {
-    position: relative;
-    display: block;
-    width: auto;
-    max-width: 150px;
+  position: absolute;
+  width: 100%;
 }
 
 .logo img {
-    width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
+  position: absolute;
+  height: 100%;
+  width: auto;
 }
 
-/* HEADER */
+body.main-page header {
+  height: 100vh;
+}
+
+/*header pro hlavní stránku*/
 header {
     position: relative;
-    height: 100vh;
-    background-image: linear-gradient(rgba(255,0,0,0) 40px, var(--dark-blue)), url(../images/background3.jpg);
-    background-size: cover;
-    background-position: center;
-    font-family: Jaro, sans-serif;
-    display: flex;
-    flex-direction: column;
+    background-image:linear-gradient( rgba(255,0,0,0)40px,var(--dark-blue)), url(../images/background3.jpg);
+    background-size: cover; 
+    width: 100%;
+    top: 0;
+    font-family: Jaro;
+}
+/*header pro podstránky*/
+body.subpage header{
+    position: relative;
+    background-image:linear-gradient( rgba(255,0,0,0)40px,var(--dark-blue)), url(../images/background3.jpg);
+    background-size: cover; 
+    height: 40vh;
+    width: 100%;
+    top: 0;
 }
 
-/* Navigační lišta nahoře */
 .header-nav {
-    height: 9rem;
+    position: relative;
+    top: 0;
+    width: 90%;
+    height: 120px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    z-index: 10;
-    font-size: 1.2rem;
+    padding: 0;
+    padding-top: 10px;
+    margin: 0 5% 0 5%;
+    font-size: 35px;
+    transition: all 0.3s ease;
 }
 
 .header-nav-left {
-    flex: 0 0 auto;
+    position: absolute;
+    width: 10%;
+    height: 100%;
+    padding: auto;
+    left: 0;
+}
+
+.header-nav-left a {
+    position: absolute;
+    height: 100%;
+    width: auto;
 }
 
 .header-nav-right {
-    flex: 1 1 auto;
-    margin-left: 2rem;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    margin-left: 50px;
+    right: 0;
 }
 
 .header-nav .nav-links {
+    position: absolute;
+    width: 99%;
+    height: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
+    align-items: center;
     list-style: none;
-    gap: 1.5rem;
+    text-decoration: none;
+    margin-left: 20px;
+    z-index: 2;
+    
+}
+
+.heading {
+    position: relative;
+    width: 60%;
+    height: 15%;
+    margin: auto;
+    top: 28%;
+    z-index: 1;
+
+}
+
+.heading .subtite {
+    position: relative;
+    width: 60%;
+    height: 15%;
+    margin: auto;
+    top: 28%;
+    z-index: 1;
+    font-size: 15px;
+}
+
+.heading h1:hover {
+    cursor: default;
+}
+
+body[data-homepage="true"] .heading h1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+    font-size: 120px;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--dark-blue);
+    font-weight: 900;
+    text-shadow: 0 0 60px rgb(0, 0, 0);
+}
+
+body:not([data-homepage="true"]) .heading h1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    color: var(--white);
+    font-size: 80px;
+    text-align: center;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--dark-blue);
+    font-weight: 900;
+    text-shadow: 0 0 60px rgb(0, 0, 0);
 }
 
 .nav-link a {
     text-decoration: none;
     color: var(--light-gray);
-    font-weight: 700;
-    font-size: 1.25rem;
-    padding: 0.5rem 0.75rem;
-    transition: color 0.3s ease;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
+    
 }
 
-.nav-link a:hover,
-.nav-link a:focus {
-    color: var(--white);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
-    cursor: pointer;
+.menu-toggle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  top: 50%;
+  right: 35%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: none;
+  color: rgb(255, 255, 255); /* přizpůsob podle designu */
+  padding: 10px;
+  z-index: 3;
+  transition: all 0.3s ease;
 }
 
-/* Nadpis uprostřed pod navigací */
-.heading {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 1rem;
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 10;
+  transition: all 0.3s ease;
 }
 
-.heading h1 {
-    color: var(--white);
-    font-size: clamp(3rem, 8vw, 8rem);
-    font-weight: 900;
-    text-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--dark-blue);
-    margin: 0;
-    user-select: none;
+.ham-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 30%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-blue);
 }
 
-/* MAIN obsah */
-main.content {
-    background-image: linear-gradient(var(--dark-blue), #556d9b);
-    width: 100%;
-    color: var(--white);
-    min-height: 800px;
-    font-family: Courier, monospace;
+.ham-left .nav-links {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style: none;
+  text-decoration: none;
+  margin: 0;
+  gap: 40px;
+}
+
+.ham-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.377); /* poloprůhledné pozadí */
+}
+
+.ham-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.3s ease;
+  text-shadow: 10px 10px 60px rgb(31, 31, 31);
+}
+
+header .nav-link a {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+header .nav-link {
+  transition: 0.7s;
+}
+
+header .nav-link:hover {
+  cursor: hand;
+  text-shadow: 0px 0px 60px rgb(0, 0, 0);
+}
+
+main {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(var(--dark-blue), #556d9b);
+  margin: 0;
+  color: var(--white);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.subpage  .introduction{
+    top: 0;
+}
+
+.content {
+    height: 800px;
 }
 
 .introduction {
-    width: 70%;
-    margin: 5vh auto;
+    position: relative;
+    width: 80%;
+    height: 200px;
+    margin: auto;
+    top: 10%;
+}
+
+.introduction h2{
+    width: 100%;
+    font-size: 90px;
+    color: var(--white);
     text-align: center;
+    font-weight: 900;
+    text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
+    font-family: 'Courier New';
+    margin-bottom: 20px;
 }
 
-.introduction h2 {
-    font-size: clamp(2rem, 6vw, 5.5rem);
+.introduction p{
+    width: 70%;
+    top:30%;
+    font-size: 25px;
+    color: var(--white);
+    font-family: Courier;
+    text-align: center;
     font-weight: 900;
-    margin-bottom: 1rem;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
+    margin: 100px auto;
 }
 
-.introduction p {
-    font-size: clamp(1rem, 2.5vw, 1.6rem);
-    font-weight: 900;
-    max-width: 70%;
-    margin: 2rem auto 0;
-    text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
-    font-family: Courier, monospace;
-}
 /* --- history.html --- */
 
 .history {
@@ -191,12 +347,19 @@ main.content {
     font-size: 20px;
 }
 
+.timeline-item h3 {
+  position: absolute;
+  width: 150%;
+    
+}
+
 .timeline-list :nth-child(odd){
     margin-left: auto;
 }
 
 .timeline-list :nth-child(even) {
     margin-right: auto;
+    
 }
 
 /* --- texty na právé straně --- */
@@ -208,6 +371,7 @@ main.content {
 
 .timeline-list :nth-child(even) h3{
     text-align: right;
+    right: 0;
 }
 
 /* --- texty na levé straně --- */
@@ -350,7 +514,7 @@ main.content {
 
 .hotspot {
   position: absolute;
-  background: rgb(151, 151, 151);
+  background: var(--yellow);
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -531,12 +695,15 @@ input[type=range] {
 }
 
 .present-pillars {
-  position: relative;
+  position: absolute;
   width: 80%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 30px;
-  margin: 10% auto;
+  flex-wrap: wrap;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
 }
 
 .pillar-card {
@@ -565,7 +732,7 @@ input[type=range] {
 }
 
 .pillar-card h3 {
-  color: #f0a500;
+  color: var(--yellow);
   margin-bottom: 10px;
 }
 
@@ -653,7 +820,7 @@ input[type=range] {
 } */
 
 
-/*----- gallery.html -----*/
+/*----- galery.html -----*/
 
 .gallery {
   height: 1200px;
@@ -670,9 +837,9 @@ input[type=range] {
 .gallery-carousel {
   position: relative;
   width: 60%;
-  height: 50%;
+  height: 60%;
   box-shadow: var(--custom-shadow);
-  margin: 2% auto 0 auto;
+  margin: 1% auto 0 auto;
 }
 
 .carousel-slide {
@@ -752,37 +919,53 @@ input[type=range] {
 }
 
 
-/* FOOTER */
+/* --- footer --- */
 footer {
-    background-color: var(--dark-blue);
-    padding: 2rem 1rem;
-    text-align: center;
-    font-size: 1rem;
+    position: relative;
+    width: 100%;
+    height: 160px;
+    color: var(--yellow);
+    font-size: 20px;
+    margin: 0;
+    bottom: 0;
+    /* background-image:linear-gradient(var(--dark-blue), var(--dark-gray)); */
+    background-color: var(--dark-gray);
+    box-shadow: 20px 20px 50px 30px rgba(0, 0, 0, 0.308);
+    font-family: 'Courier New', Courier, monospace;
 }
 
-footer .footer-nav {
-    margin-bottom: 1rem;
-}
-
-footer .nav-links {
+.footer-nav {
+    position: relative;
+    width: 80%;
+    height: 60%;
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
     list-style: none;
-    padding: 0;
-}
-
-footer .nav-link a {
-    color: var(--light-gray);
-    font-weight: 700;
     text-decoration: none;
-    transition: color 0.3s ease;
+    margin: auto
 }
 
-footer .nav-link a:hover,
-footer .nav-link a:focus {
-    color: var(--white);
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+.footer-nav .nav-links {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    text-decoration: none;
+    margin:0;
+    
 }
 
+footer p {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    text-align: center;
+    padding:0;
+    margin: 0 ;
+    margin-bottom: 10px;
+}
 

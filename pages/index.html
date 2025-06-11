@@ -11,18 +11,13 @@
 
     <title>Baťova škola práce</title>
 </head>
-<body>
+<body class="main-page">
     <header>
         <nav class="header-nav">
             <div class="header-nav-left">
                 <a href="index.html"  data-link class="logo">
                     <img src="../images/logo.png" alt="Logo Baťovy školy práce" class="logo">
                 </a>
-            </div>
-            <div class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" role="button" tabindex="0">
-                <div></div>
-                <div></div>
-                <div></div>
             </div>
             <div class="header-nav-right">
                 <ul class="nav-links" id="nav-links">
@@ -34,6 +29,22 @@
                     <li class="nav-link"><a href="gallery.html" data-link>GALERIE</a></li>
                 </ul>
             </div>
+            <div class="menu-toggle" onclick="openMenu()">☰</div>
+            <div class="hamburger-menu" id="hamburger-menu">
+                <div class="ham-left">
+                    <ul class="nav-links">
+                        <li class="nav-link"><a href="history.html" data-link>HISTORIE</a></li>
+                        <li class="nav-link"><a href="city.html" data-link>MĚSTO</a></li>
+                        <li class="nav-link"><a href="personalities.html" data-link>OSOBNOSTI</a></li>
+                        <li class="nav-link"><a href="present.html" data-link>SOUČASNOST</a></li>
+                        <li class="nav-link"><a href="interesting.html" data-link>ZAJÍMAVOSTI</a></li>
+                        <li class="nav-link"><a href="gallery.html" data-link>GALERIE</a></li>
+                    </ul>
+                </div>
+                <div class="ham-right" onclick="closeMenu()">
+                    <div class="ham-close" onclick="closeMenu()">✖</div>
+                </div>
+            </div>
         </nav>
         <section class="heading">
             <h1>BAŤOVA ŠKOLA PRÁCE</h1>
@@ -42,7 +53,7 @@
     <main class="content">
         <section class="introduction">
             <h2>Úvod</h2>
-            <p>Baťova škola práce je vzdělávací instituce, která se zaměřuje na rozvoj dovedností a znalostí v oblasti podnikání a managementu.</p>
+            <p>Baťova škola práce byla unikátním vzdělávacím systémem, který spojoval odborné vzdělávání s praxí přímo ve firmě Baťa. Vznikla ve Zlíně ve 30. letech 20. století a stala se symbolem moderního přístupu k výchově mladé generace k samostatnosti, odpovědnosti a podnikavosti. Tento průkopnický model vzdělávání ovlivnil tisíce mladých lidí a zanechal trvalou stopu v české i světové historii průmyslu a školství.</p>
         </section>
     </main>
     <footer>
@@ -56,7 +67,7 @@
                 <li class="nav-link"><a href="gallery.html" data-link>GALERIE</a></li>
             </ul>
         </nav>
-        <p>&copy; 2025 Baťova škola práce. Všechna práva vyhrazena.</p>
+        <p>&copy; 2025 Jakub Malota. Všechna práva vyhrazena.</p>
     </footer>
     <script src="script.js"></script>
 </body>

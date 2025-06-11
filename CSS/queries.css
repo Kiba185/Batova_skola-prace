@@ -1,82 +1,403 @@
-/* Hamburger ikona - skrytá na desktopu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 30px;
-    height: 25px;
-    cursor: pointer;
-    z-index: 20;
-}
 
-.hamburger div {
-    width: 100%;
-    height: 3px;
-    background-color: var(--light-gray);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
 
-/* Zvětšení textu v menu pro větší obrazovky */
-@media (min-width: 1025px) {
-    .nav-link a {
-        font-size: 1.5rem;
+@media (max-width: 1400px) {
+    .header-nav {
+        font-size: 25px;
+        height: 90px;
     }
-}
 
-/* Tablet a menší - zobraz hamburger a uprav menu */
-@media (max-width: 1024px) {
-    .header-nav .nav-links {
-        position: fixed;
-        top: 9rem; /* pod navigací */
-        right: 0;
-        background-color: var(--dark-blue);
+    footer {
+        height: 380px;
+    }
+
+    .footer-nav .nav-links {
         flex-direction: column;
-        width: 250px;
+        gap: 20px;
+        margin-top: 10%;
+    }
+
+    footer p {
+        position: absolute;
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        padding:0;
+        margin: 0 ;
+        margin-bottom: 0;
+        bottom: 0;
+    }
+
+    .map-section {
+        position: relative;
+        width: 100%;
         height: 100vh;
-        padding-top: 3rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        box-shadow: var(--custom-shadow);
-        display: flex;
-        gap: 1.5rem;
-        z-index: 15;
+        color: var(--white);
+        top: 8%;
     }
 
-    /* Aktivní menu */
-    .header-nav .nav-links.nav-active {
-        transform: translateX(0);
+    .map-container {
+        position: relative;
+        max-width: 85%;
+        margin: 0 auto;
     }
 
-    /* Zvýšení velikosti textu v menu */
-    .nav-link a {
-        font-size: 1.5rem;
-        padding: 1rem 1.5rem;
+    .interesting h2 {
+        font-size: 50px;
     }
 
-    /* Zobraz hamburger */
-    .hamburger {
-        display: flex;
+    .interesting-box {
+        height: 17%;
+
     }
 
-    /* Odstranění marginu vlevo u menu, aby bylo rovnou vpravo */
-    .header-nav-right {
-        margin-left: 0;
+    .gallery-carousel {
+        width: 80%;
+        height: 50%;
     }
+    
 }
 
-/* Mobilní menší obrazovky */
-@media (max-width: 768px) {
-    .logo {
-        max-width: 120px;
-    }
+@media (max-width: 1200px) {
 
-    .introduction {
+    .introduction  {
         width: 90%;
     }
 
-    .nav-link a {
-        font-size: 1.4rem;
-        padding: 0.75rem 1rem;
+    .pillar-card {
+        width: 45%;
+    }
+
+    .present .subpage {
+        height: 1500px;
+    }
+
+    .personalities-grid {
+        grid-template-columns: 45% 45%;
+    }
+
+    .personalities .subpage {
+        height: 2000px;
+    }
+
+    .details {
+        flex-direction: column;
+    }
+
+    .hotspot {
+        width: 18px;
+        height: 18px;
+
+    }
+
+    .introduction p {
+        width: 90%;
+    }
+
+    .map-section {
+        top: 12%;
+    }
+
+    .timeline-graph {
+        position: relative;
+        width: 100%;
+        height: 98%;
+        z-index: 1;
+    }
+
+    .timeline-graph :nth-child(n) {
+        position: absolute;
+        box-shadow: var(--custom-shadow);
+    }
+
+    .timeline-graph :nth-child(1) {
+        width: 5px;
+        height: 100%;
+        background-color: var(--white);
+        left: 5%;
+        transform: none;
+    }
+
+    .timeline-graph :nth-child(2) {
+        height: 5px;
+        background-color: var(--white);
+        top: 1.7%;
+        left: 5%;
+        width: 41.5%;
+    }
+    .timeline-graph :nth-child(3) {
+        height: 5px;
+        background-color: var(--white);
+        top: 14.6%;
+        left: 5%;
+        width: 33%;
+    }
+    .timeline-graph :nth-child(4) {
+        height: 5px;
+        background-color: var(--white);
+        top: 27.4%;
+        left: 5%;
+        width: 35.5%;
+    }
+    .timeline-graph :nth-child(5) {
+        height: 5px;
+        background-color: var(--white);
+        top: 40.3%;
+        left: 5%;
+        width: 25.2%;
+    }
+    .timeline-graph :nth-child(6) {
+        height: 5px;
+        background-color: var(--white);
+        top: 53.1%;
+        left: 5%;
+        width: 33%;
+    }
+    .timeline-graph :nth-child(7) {
+        height: 5px;
+        background-color: var(--white);
+        top: 66%;
+        left: 5%;
+        width: 28%;
+    }
+    .timeline-graph :nth-child(8) {
+        height: 5px;
+        background-color: var(--white);
+        top: 78.8%;
+        left: 5%;
+        width: 34.4%;
+    }
+    .timeline-graph :nth-child(9) {
+        height: 5px;
+        background-color: var(--white);
+        top: 91.7%;
+        left: 5%;
+        width: 32.7%;
+    }
+
+    .timeline-list :nth-child(odd){
+        margin-left: 10%;
+    }
+
+    .timeline-list :nth-child(even) {
+        margin-left: 10%;
+        margin-right: 0;
+    }
+
+    /* --- texty na právé straně --- */
+    .timeline-list :nth-child(even) p{
+        text-align: left;
+        left: 73%;
+        margin-left: 2%;
+        margin-right: 0;
+        width: 120%;
+        font-size: 18px;
+    }
+
+    /* --- texty na levé straně --- */
+    .timeline-list :nth-child(odd) p{
+        text-align: left;
+        left: 73%;
+        margin-left: 2%;
+        width: 120%;
+        font-size: 18px;
+    }
+
+    .timeline-list :nth-child(even) h3{
+        text-align: left;
+        right: -60%;
+    }
+
+    .timeline-list :nth-child(odd) h3{
+        text-align: left;
+    }
+
+    .timeline-list p {
+        position: absolute;
+        width: 45%;
+        font-size: 17px;
+        top: 23%;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .timeline-image {
+        position: absolute;
+        width: 50%;
+        top: 22%;
+        box-shadow: var(--custom-shadow);
+    }
+
+    /* --- obrázeky na pravé straně --- */
+    .timeline-list :nth-child(even) .timeline-image {
+        left: 0;
+        width: 60%;
+    }
+
+    /* --- obrázeky na levé straně --- */
+    .timeline-list :nth-child(odd) .timeline-image {
+        left: 0;
+        width: 60%;
+    }
+
+    .timeline p {
+        position: relative;
+        width: 80%;
+        height: 2%;
+        text-align: left;
+        font-size: 20px;
+        color: var(--white);
+        font-weight: 900;
+        text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
+        left: 2%;
+    }
+
+    .timeline-item {
+        position: relative;
+        width: 43%;
+        height: 10%;
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .introduction h2 {
+        font-size: 60px;
+    }
+
+    .present-pillars {
+        top:25%;
+    }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .header-nav-right {
+    display: none;
+  }
+
+  .hamburger-menu.show {
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-menu.hide {
+    display: none;
+    transition: all 0.3s ease;
+  }
+
+  .content {
+        height: 600px;
+    }
+
+    .personalities-grid {
+        top: 10%;
+    }
+
+    .interesting-box {
+        height: 20%;
+        width: 65%;
+        top: 25%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+
+    .present-pillars {
+        top:20%;
+    }
+
+    .introduction p {
+        font-size: 20px;
+    }
+
+    .timeline-list :nth-child(even) .timeline-image {
+        left: 0;
+        width: 80%;
+    }
+
+    /* --- obrázeky na levé straně --- */
+    .timeline-list :nth-child(odd) .timeline-image {
+        left: 0;
+        width: 80%;
+    }
+    
+    .timeline-list h3 {
+        font-size: 22px;
+        width: 150%;
+    }
+
+
+    .timeline {
+        width: 90%
+    };
+
+
+    .timeline-list :nth-child(even) h3{
+        left: 0;
+    }
+
+    .timeline-list :nth-child(even) p{
+        text-align: left;
+        left: 73%;
+        margin-left: 2%;
+        margin-right: 0;
+        width: 120%;
+        font-size: 16px;
+    }
+
+    /* --- texty na levé straně --- */
+    .timeline-list :nth-child(odd) p{
+        text-align: left;
+        left: 90%;
+        margin-left: 2%;
+        width: 70%;
+        font-size: 16px;
+    }
+
+    .timeline-list :nth-child(even) p{
+        text-align: left;
+        left: 90%;
+        margin-left: 2%;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .city .subpage {
+        height: 1300px;
+    }
+
+    .personalities-grid {
+        grid-template-columns: 100%;
+        top: 5%;
+    }
+
+    .personalities .subpage {
+        height: 2600px;
+    }
+
+    .pillar-card {
+        width: 85%;
+    }
+
+    .present .subpage {
+        height: 2000px;
+    }
+
+    .interesting-box {
+        height: 20%;
+        width: 70%;
+        top: 32%;
+    }
+
+    .gallery {
+        height: 1000px;
+    }
+
+    .gallery-carousel {
+        width: 85%;
+        height: 40%;
     }
 }
