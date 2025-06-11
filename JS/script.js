@@ -190,3 +190,56 @@ function focusPresentCard(card) {
   card.style.transform = 'translateX(-50%) translateZ(150px)';
 }
 
+const quotes = [
+  "„Neříkej, že to nejde. Řekni, že to zatím neumíš.“ – Tomáš Baťa",
+  "Baťova škola práce měla vlastní filmové studio.",
+  "Studenti se učili nejen teorii, ale i praxi přímo ve firmě.",
+  "Zlín byl ve 30. letech vzorem moderního města díky Baťově systému.",
+  "Baťa věřil, že vzdělání má být propojeno s výrobou a službou společnosti.",
+  "V roce 1929 byla založena BŠP i pro dívky, kterých již v r. 1933 bylo ve třech internátech 4500.",
+  "Každý rok bylo příjmáno 1000 až 1500 nových žáků, kteří byli přijímáni na základě doporučení a testů.",
+];
+
+function showRandomQuote() {
+  const quoteBox = document.getElementById("quoteText");
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteBox.textContent = random;
+}
+
+// Načte se při načtení stránky
+document.addEventListener("DOMContentLoaded", showRandomQuote);
+
+const slides = document.querySelectorAll(".carousel-img");
+const thumbnails = document.querySelectorAll(".thumbnails-grid img");
+let currentIndex = 0;
+let autoSlideInterval = setInterval(nextSlide, 5000);
+
+function showSlide(index) {
+  slides[currentIndex].classList.remove("active");
+  thumbnails[currentIndex].classList.remove("active-thumb");
+
+  currentIndex = index;
+
+  slides[currentIndex].classList.add("active");
+  thumbnails[currentIndex].classList.add("active-thumb");
+}
+
+function nextSlide() {
+  const nextIndex = (currentIndex + 1) % slides.length;
+  showSlide(nextIndex);
+}
+
+function prevSlide() {
+  const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(prevIndex);
+}
+
+function goToSlide(index) {
+  showSlide(index);
+  resetAutoSlide();
+}
+
+function resetAutoSlide() {
+  clearInterval(autoSlideInterval);
+  autoSlideInterval = setInterval(nextSlide, 5000);
+}

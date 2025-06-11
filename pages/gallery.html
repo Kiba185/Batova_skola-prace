@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/queries.css">
-    <link rel="stylesheet" href="../CSS/minigame.css">
     <link href='https://fonts.googleapis.com/css?family=Jaro' rel='stylesheet'>
     <script src="../JS/script.js" defer></script>
 
@@ -31,35 +30,28 @@
             </div>
         </nav>
     </header>
-    <main class="interesting subpage">
+    <main class="gallery subpage">
         <section class="introduction">
-            <h2>Zajímavosti o Baťově škole práce</h2>
-            <p>Baťova škola práce a rozvoj Zlína byly výsledkem práce vizionářů, architektů, pedagogů a průmyslníků, kteří svou činností ovlivnili celé generace.</p>
+            <h2>Fotogalerie</h2>
         </section>
-        <section class="interesting-box">
-            <div class="interesting-quote-box" id="quoteBox">
-                <p id="quoteText">Načítání zajímavosti...</p>
+        <section class="gallery-carousel">
+            <div class="carousel-container">
+                <button class="carousel-btn prev" onclick="prevSlide()">&#10094;</button>
+                <div class="carousel-slide">
+                    <img src="../images/domky-old.jpg" alt="Galerie obrázek 1" class="carousel-img active">
+                    <img src="../images/domky-new.jpg" alt="Galerie obrázek 2" class="carousel-img">
+                    <img src="../images/zavody-now.jpg" alt="Galerie obrázek 3" class="carousel-img">
+                </div>
+                <button class="carousel-btn next" onclick="nextSlide()">&#10095;</button>
             </div>
         </section>
-        <!-- <section class="bata-minigame">
-            <div class="minigame-placeholder">
-                <div id="startScreen">
-                    <h1>🏃‍♂️ Tomáš Baťa Run</h1>
-                    <p>Přeskoč cihly! Klepni nebo zmáčkni mezerník pro skok.</p>
-                    <button onclick="startGame()">Start</button>
-                </div>
-                <div id="scoreDisplay">
-                    Skóre: <span id="score">0</span> | 🥇 High Score: <span id="highScore">0</span>
-                </div>
-                <canvas id="gameCanvas" width="800" height="300"></canvas>
-                <div id="gameOverScreen" style="display: none;">
-                    <h2>💥 Tomáš spadl!</h2>
-                    <p>Tvé skóre: <span id="finalScore">0</span></p>
-                    <p>🥇 Nejlepší skóre: <span id="finalHighScore">0</span></p>
-                    <button onclick="restartGame()">Hrát znovu</button>
-                </div>
+        <section class="gallery-thumbnails">
+            <div class="thumbnails-grid">
+                <img src="../images/domky-old.jpg" alt="Miniatura 1" onclick="goToSlide(0)" class="active-thumb">
+                <img src="../images/domky-new.jpg" alt="Miniatura 2" onclick="goToSlide(1)">
+                <img src="../images/zavody-now.jpg" alt="Miniatura 3" onclick="goToSlide(2)">
             </div>
-        </section> -->
+        </section>
     </main>
     <footer>
         <nav class="footer-nav">
@@ -74,6 +66,6 @@
         </nav>
         <p>&copy; 2025 Baťova škola práce. Všechna práva vyhrazena.</p>
     </footer>
-    <script src="minigame.js"></script>
 </body>
 </html>
+
