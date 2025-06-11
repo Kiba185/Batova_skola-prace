@@ -1,0 +1,82 @@
+/* Hamburger ikona - skrytá na desktopu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.hamburger div {
+    width: 100%;
+    height: 3px;
+    background-color: var(--light-gray);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Zvětšení textu v menu pro větší obrazovky */
+@media (min-width: 1025px) {
+    .nav-link a {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet a menší - zobraz hamburger a uprav menu */
+@media (max-width: 1024px) {
+    .header-nav .nav-links {
+        position: fixed;
+        top: 9rem; /* pod navigací */
+        right: 0;
+        background-color: var(--dark-blue);
+        flex-direction: column;
+        width: 250px;
+        height: 100vh;
+        padding-top: 3rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        box-shadow: var(--custom-shadow);
+        display: flex;
+        gap: 1.5rem;
+        z-index: 15;
+    }
+
+    /* Aktivní menu */
+    .header-nav .nav-links.nav-active {
+        transform: translateX(0);
+    }
+
+    /* Zvýšení velikosti textu v menu */
+    .nav-link a {
+        font-size: 1.5rem;
+        padding: 1rem 1.5rem;
+    }
+
+    /* Zobraz hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Odstranění marginu vlevo u menu, aby bylo rovnou vpravo */
+    .header-nav-right {
+        margin-left: 0;
+    }
+}
+
+/* Mobilní menší obrazovky */
+@media (max-width: 768px) {
+    .logo {
+        max-width: 120px;
+    }
+
+    .introduction {
+        width: 90%;
+    }
+
+    .nav-link a {
+        font-size: 1.4rem;
+        padding: 0.75rem 1rem;
+    }
+}

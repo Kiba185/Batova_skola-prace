@@ -1,3 +1,4 @@
+/* Základní reset a proměnné */
 * {
     margin: 0;
     padding: 0;
@@ -12,202 +13,133 @@
 
 body {
     background-color: var(--dark-blue);
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--white);
 }
 
-#content.fade-out {
-    opacity: 0;
-}
-  
-
+/* Logo */
 .logo {
-    position: absolute;
-    width: 100%;
+    position: relative;
+    display: block;
+    width: auto;
+    max-width: 150px;
 }
 
 .logo img {
-    position: absolute;
     width: 100%;
-    
+    height: auto;
+    display: block;
+    position: relative;
 }
 
-/*header pro hlavní stránku*/
+/* HEADER */
 header {
     position: relative;
-    background-image:linear-gradient( rgba(255,0,0,0)40px,var(--dark-blue)), url(../images/background3.jpg);
-    background-size: cover; 
     height: 100vh;
-    width: 100%;
-    top: 0;
-    font-family: Jaro;
-}
-/*header pro podstránky*/
-.history-page header{
-    position: relative;
-    background-image:linear-gradient( rgba(255,0,0,0)40px,var(--dark-blue)), url(../images/background3.jpg);
-    background-size: cover; 
-    height: 40vh;
-    width: 100%;
-    top: 0;
+    background-image: linear-gradient(rgba(255,0,0,0) 40px, var(--dark-blue)), url(../images/background3.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: Jaro, sans-serif;
+    display: flex;
+    flex-direction: column;
 }
 
+/* Navigační lišta nahoře */
 .header-nav {
-    position: relative;
-    top: 0;
-    width: 98%;
-    height: 145px;
+    height: 9rem;
     display: flex;
     align-items: center;
-    padding: 0;
-    padding-top: 10px;
-    margin: 0 1% 0 1%;
-    font-size: 45px;
+    justify-content: space-between;
+    padding: 0 1rem;
+    z-index: 10;
+    font-size: 1.2rem;
 }
 
 .header-nav-left {
-    position: relative;
-    width: 10%;
-    height: 100%;
-    padding: auto;
+    flex: 0 0 auto;
 }
 
 .header-nav-right {
-    position: relative;
-    width: 80%;
-    height: 100%;;
-    margin-left: 50px;
+    flex: 1 1 auto;
+    margin-left: 2rem;
 }
 
 .header-nav .nav-links {
-    position: absolute;
-    width: 99%;
-    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
     list-style: none;
-    text-decoration: none;
-    margin-left: 20px;
-    z-index: 2;
-    
-}
-
-.heading {
-    position: relative;
-    width: 60%;
-    height: 15%;
-    margin: auto;
-    top: 28%;
-    z-index: 1;
-
-}
-
-.heading .subtite {
-    position: relative;
-    width: 60%;
-    height: 15%;
-    margin: auto;
-    top: 28%;
-    z-index: 1;
-    font-size: 15px;
-}
-
-.heading h1:hover {
-    cursor: default;
-}
-
-body[data-homepage="true"] .heading h1{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: var(--white);
-    font-size: 120px;
-    text-align: center;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--dark-blue);
-    font-weight: 900;
-    text-shadow: 0 0 60px rgb(0, 0, 0);
-}
-
-body:not([data-homepage="true"]) .heading h1 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: var(--white);
-    font-size: 80px;
-    text-align: center;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--dark-blue);
-    font-weight: 900;
-    text-shadow: 0 0 60px rgb(0, 0, 0);
+    gap: 1.5rem;
 }
 
 .nav-link a {
     text-decoration: none;
     color: var(--light-gray);
-    
-}
-header .nav-link a {
-    -webkit-text-stroke-width: 2px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 0.5rem 0.75rem;
+    transition: color 0.3s ease;
+    -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
 
-header .nav-link {
-    transition: 0.7s;
-}
-
-header .nav-link:hover {
-    cursor: hand;
-    text-shadow: 0px 0px 60px rgb(0, 0, 0);
-}
-
-main {
-    position: relative;
-    width: 100%;
-    background-image: linear-gradient(var(--dark-blue), #556d9b);
-    margin: 0;
+.nav-link a:hover,
+.nav-link a:focus {
     color: var(--white);
-    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    cursor: pointer;
 }
 
-.subpage  .introduction{
-    top: 0;
+/* Nadpis uprostřed pod navigací */
+.heading {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
 }
 
-.content {
-    height: 800px;
+.heading h1 {
+    color: var(--white);
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 900;
+    text-shadow: 0 0 60px rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--dark-blue);
+    margin: 0;
+    user-select: none;
+}
+
+/* MAIN obsah */
+main.content {
+    background-image: linear-gradient(var(--dark-blue), #556d9b);
+    width: 100%;
+    color: var(--white);
+    min-height: 800px;
+    font-family: Courier, monospace;
 }
 
 .introduction {
-    position: relative;
     width: 70%;
-    height: 200px;
-    margin: auto;
-    top: 10%;
-}
-
-.introduction h2{
-    width: 100%;
-    font-size: 90px;
-    color: var(--white);
+    margin: 5vh auto;
     text-align: center;
-    font-weight: 900;
-    text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
-    font-family: 'Courier New';
-    margin-bottom: 20px;
 }
 
-.introduction p{
-    width: 70%;
-    top:30%;
-    font-size: 25px;
-    color: var(--white);
-    font-family: Courier;
-    text-align: center;
+.introduction h2 {
+    font-size: clamp(2rem, 6vw, 5.5rem);
     font-weight: 900;
+    margin-bottom: 1rem;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
-    margin: 100px auto;
 }
 
+.introduction p {
+    font-size: clamp(1rem, 2.5vw, 1.6rem);
+    font-weight: 900;
+    max-width: 70%;
+    margin: 2rem auto 0;
+    text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
+    font-family: Courier, monospace;
+}
 /* --- history.html --- */
 
 .history {
@@ -721,10 +653,10 @@ input[type=range] {
 } */
 
 
-/*----- galery.html -----*/
+/*----- gallery.html -----*/
 
 .gallery {
-  height: 2000px;
+  height: 1200px;
 }
 
 .carousel-container {
@@ -738,7 +670,7 @@ input[type=range] {
 .gallery-carousel {
   position: relative;
   width: 60%;
-  height: 30%;
+  height: 50%;
   box-shadow: var(--custom-shadow);
   margin: 2% auto 0 auto;
 }
@@ -820,52 +752,37 @@ input[type=range] {
 }
 
 
-/* --- footer --- */
+/* FOOTER */
 footer {
-    position: relative;
-    width: 100%;
-    height: 160px;
-    color: var(--white);
-    font-size: 20px;
-    margin: 0;
-    bottom: 0;
-    /* background-image:linear-gradient(var(--dark-blue), var(--dark-gray)); */
-    background-color: var(--dark-gray);
-    box-shadow: 20px 20px 50px 30px rgba(0, 0, 0, 0.308);
-}
-
-.footer-nav {
-    position: relative;
-    width: 80%;
-    height: 60%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    text-decoration: none;
-    margin: auto
-}
-
-.footer-nav .nav-links {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    text-decoration: none;
-    margin:0;
-    
-}
-
-footer p {
-    position: absolute;
-    width: 100%;
-    height: 25%;
+    background-color: var(--dark-blue);
+    padding: 2rem 1rem;
     text-align: center;
-    padding:0;
-    margin: 0 ;
-    margin-bottom: 10px;
+    font-size: 1rem;
 }
+
+footer .footer-nav {
+    margin-bottom: 1rem;
+}
+
+footer .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+}
+
+footer .nav-link a {
+    color: var(--light-gray);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .nav-link a:hover,
+footer .nav-link a:focus {
+    color: var(--white);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
 

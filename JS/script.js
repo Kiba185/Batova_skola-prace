@@ -1,3 +1,23 @@
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.header-nav .nav-links');
+
+// Toggle menu po kliknutí na hamburger
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('nav-active');
+
+  // ARIA atribut pro přístupnost
+  const expanded = hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+  hamburger.setAttribute('aria-expanded', expanded);
+});
+
+// Umožní ovládat hamburger i klávesou Enter nebo Space (pro přístupnost)
+hamburger.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    e.preventDefault();
+    hamburger.click();
+  }
+});
+
 const places = {
   skola: {
     title: 'Baťova škola práce',
@@ -10,7 +30,37 @@ const places = {
     description: 'Typické cihlové domky pro zaměstnance Baťových závodů, postavené jako součást sociálního programu firmy.',
     beforeImg: '../images/domky-old.jpg',
     afterImg: '../images/domky-new.jpg'
-  }
+  },
+  mrakodrap: {
+    title: 'Baťův mrakodrap (21. budova)',
+    description: 'Administrativní budova postavená v roce 1938, známá jako jedna z prvních výškových budov v Evropě. Obsahovala i pojízdnou kancelář.',
+    beforeImg: '../images/mrakodrap-old.jpg',
+    afterImg: '../images/mrakodrap-new.jpg'
+  },
+  velkeKino: {
+    title: 'Velké kino',
+    description: 'Postaveno v roce 1932 jako největší kino v Československu, sloužilo jako kulturní centrum města.',
+    beforeImg: '../images/kino-old.jpg',
+    afterImg: '../images/kino-new.jpg'
+  },
+  nemocnice: {
+    title: 'Baťova nemocnice',
+    description: 'Moderní nemocnice postavená firmou Baťa jako součást sociální infrastruktury města.',
+    beforeImg: '../images/nemocnice-old.jpg',
+    afterImg: '../images/nemocnice-new.jpg'
+  },
+  letiste: {
+    title: 'Letiště Zlín (Baťovo letiště)',
+    description: 'Letiště vybudované pro potřeby firmy Baťa a rychlou dopravu mezi pobočkami.',
+    beforeImg: '../images/letiste-old.jpg',
+    afterImg: '../images/letiste-new.jpg'
+  },
+  zavody: {
+    title: 'Baťovy závody',
+    description: 'Hlavní výrobní závod firmy Baťa, který se stal základem pro rozvoj města a jeho ekonomiky.',
+    beforeImg: '../images/zavody-old.jpg',
+    afterImg: '../images/zavody-new.jpg'
+  },
 };
 
 let currentActiveHotspot = null;
