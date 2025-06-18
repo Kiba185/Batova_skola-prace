@@ -18,7 +18,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: kocicka.endora.cz
-          username: bataskolacz
+          username: bataskolahyscz
           password: Qwertz123.
           protocol: ftp
           server-dir: /web/  # změníš podle toho, kam to má na Endoře nahrávat
