@@ -365,8 +365,12 @@
         width: 100%;
     }
 
+    .palce-info {
+        width: 100%;
+    }
+
     .city .subpage {
-        height: 1300px;
+        height: 1500px;
     }
 
     .personalities-grid {

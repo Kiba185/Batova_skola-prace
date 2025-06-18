@@ -5,10 +5,11 @@
   --dark-blue: #384969;
   --light-gray: #c2c2c2;
   --dark-gray: #3f3f3f;
-  --white: #e6e6e6;
+  --white: #d4d4d4;
   --yellow: #f0a500;
   --custom-shadow: 0 4px 10px rgba(63, 63, 63, 0.3);
-  --custom-background: rgba(255, 255, 255, 0.1);
+  --custom-background: rgba(255, 255, 255, 0.178);
+  --main-font: 'Courier New', Courier, monospace;
 }
 
 body {
@@ -25,9 +26,12 @@ body {
 }
 
 .logo img {
-  position: absolute;
-  height: 100%;
+  position: relative;
+  height: 80%;
   width: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 40px;
 }
 
 body.main-page header {
@@ -41,7 +45,7 @@ header {
     background-size: cover; 
     width: 100%;
     top: 0;
-    font-family: Jaro;
+    font-family: var(--main-font);
 }
 /*header pro podstránky*/
 body.subpage header{
@@ -56,15 +60,17 @@ body.subpage header{
 .header-nav {
     position: relative;
     top: 0;
-    width: 90%;
-    height: 120px;
+    width: 100%;
+    height: 100px;
     display: flex;
     align-items: center;
-    padding: 0;
-    padding-top: 10px;
-    margin: 0 5% 0 5%;
+    padding: 20px;
+    margin: 0;
     font-size: 35px;
     transition: all 0.3s ease;
+    background-color: var(--custom-background);
+    box-shadow: var(--custom-shadow);
+    color: var(--white);
 }
 
 .header-nav-left {
@@ -83,22 +89,21 @@ body.subpage header{
 
 .header-nav-right {
     position: absolute;
-    width: 80%;
+    width: 85%;
     height: 100%;
-    margin-left: 50px;
     right: 0;
 }
 
 .header-nav .nav-links {
     position: absolute;
-    width: 99%;
+    width: 100%;
     height: 100%;
+    right: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style: none;
     text-decoration: none;
-    margin-left: 20px;
     z-index: 2;
     
 }
@@ -127,35 +132,22 @@ body.subpage header{
     cursor: default;
 }
 
-body[data-homepage="true"] .heading h1{
+.heading h1 {
     position: absolute;
     width: 100%;
     height: 100%;
     color: var(--white);
-    font-size: 120px;
+    font-size: 100px;
     text-align: center;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--dark-blue);
-    font-weight: 900;
-    text-shadow: 0 0 60px rgb(0, 0, 0);
-}
-
-body:not([data-homepage="true"]) .heading h1 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: var(--white);
-    font-size: 80px;
-    text-align: center;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--dark-blue);
+    /* -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: var(--dark-blue); */
     font-weight: 900;
     text-shadow: 0 0 60px rgb(0, 0, 0);
 }
 
 .nav-link a {
     text-decoration: none;
-    color: var(--light-gray);
+    color: var(--white);
     
 }
 
@@ -235,8 +227,7 @@ body:not([data-homepage="true"]) .heading h1 {
 }
 
 header .nav-link a {
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: black;
+  font-weight: 600;
 }
 
 header .nav-link {
@@ -254,7 +245,7 @@ main {
   background-image: linear-gradient(var(--dark-blue), #556d9b);
   margin: 0;
   color: var(--white);
-  font-family: 'Courier New', Courier, monospace;
+  font-family: var(--main-font);
 }
 
 .subpage  .introduction{
@@ -280,7 +271,7 @@ main {
     text-align: center;
     font-weight: 900;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
-    font-family: 'Courier New';
+    font-family: var(--main-font);
     margin-bottom: 20px;
 }
 
@@ -289,7 +280,7 @@ main {
     top:30%;
     font-size: 25px;
     color: var(--white);
-    font-family: Courier;
+    font-family: var(--main-font);
     text-align: center;
     font-weight: 900;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
@@ -319,12 +310,13 @@ main {
     color: var(--white);
     font-weight: 900;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
-    font-family: Jaro;
+    font-family: var(--main-font);
 }
 
 .timeline h3 {
-    font-family: Jaro;
+    font-family: var(--main-font);
     font-size: 27px;
+      font-weight: bold;
 }
 
 .timeline-list {
@@ -349,7 +341,8 @@ main {
 
 .timeline-item h3 {
   position: absolute;
-  width: 150%;
+  width: 120%;
+  font-weight: 600;
     
 }
 
@@ -390,7 +383,7 @@ main {
     width: 45%;
     font-size: 17px;
     top: 23%;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--main-font);
 }
 
 .timeline-image {
@@ -490,7 +483,7 @@ main {
 /* --- city.html --- */
 
 .city {
-     height: 1700px;
+     height: 1800px;
 }
 
 .map-section {
@@ -539,7 +532,6 @@ main {
   max-width: 80%;
   margin: 20px auto;
   padding: 20px;
-  display: flex;
 }
 
 .details h2 {
@@ -577,6 +569,14 @@ main {
 
 .after {
   z-index: 1;
+}
+
+.place-info {
+  color: var(--white);
+  font-size: 24px;
+  text-align: center;
+  width:60%;
+  margin: 0 auto
 }
 
 .slider-handle {
@@ -931,7 +931,7 @@ footer {
     /* background-image:linear-gradient(var(--dark-blue), var(--dark-gray)); */
     background-color: var(--dark-gray);
     box-shadow: 20px 20px 50px 30px rgba(0, 0, 0, 0.308);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: var(--main-font);
 }
 
 .footer-nav {
