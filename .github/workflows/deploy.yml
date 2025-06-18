@@ -17,8 +17,8 @@ jobs:
       - name: Deploy to Endora via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: kocicka.endora.cz
+          username: bataskolacz
+          password: Qwertz123.
           protocol: ftp
           server-dir: /web/  # změníš podle toho, kam to má na Endoře nahrávat
