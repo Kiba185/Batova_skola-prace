@@ -1,0 +1,24 @@
+name: Deploy to Endora FTP
+
+on:
+  push:
+    branches:
+      - main  # spusť akci při pushi na větev main
+
+jobs:
+  ftp-deploy:
+    name: Upload files to Endora
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Deploy to Endora via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          server-dir: /web/  # změníš podle toho, kam to má na Endoře nahrávat
