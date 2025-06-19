@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        server: kocicka.endora.cz
-        username: bataskolahyscz@bataskola.hys.cz
-        password: Ab123456789
+        server: "kocicka.endora.cz"
+        username: "bataskolahyscz@bataskola.hys.cz"
+        password: "Ab123456789"
