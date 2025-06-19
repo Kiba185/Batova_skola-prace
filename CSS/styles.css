@@ -769,7 +769,7 @@ input[type=range] {
 
 /* ---- interesting.html ---- */
 .interesting {
-    height: 700px;
+    height: 1500px;
 }
 .interesting-box {
   position: relative;
@@ -805,18 +805,6 @@ input[type=range] {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.bata-minigame {
-  margin: 2rem;
-  padding: 1rem;
-  border-radius: 8px;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #777;
-  font-style: italic;
 }
 
 

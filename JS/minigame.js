@@ -3,23 +3,39 @@ const ctx = canvas.getContext("2d");
 
 let gameRunning = false;
 let gameSpeed = 1.5;
-let gravity = 0.16;
-let jumpForce = -9;
+let gravity = 0.18;
+let jumpForce = -9.5;
 let spawnTimer = 0;
 let obstacles = [];
 let framesSinceStart = 0;
 let score = 0;
 let scoreFrameCounter = 0;
 let highScore = localStorage.getItem("highScore") || 0;
-const maxY = 20;
-
 document.getElementById("highScore").textContent = highScore;
 
-const bataImage = new Image();
-bataImage.src = "bata.png";
+let maxY = 20;
+let scale = 1;
 
-const cihlaImage = new Image();
-cihlaImage.src = "cihla.png";
+// Načtení obrázků s upravenou cestou
+const bataImg = new Image();
+bataImg.src = '../images/bata.png';
+
+const cihlaImg = new Image();
+cihlaImg.src = '../images/cihla.png';
+
+function resizeCanvas() {
+  const parentWidth = canvas.parentElement.clientWidth;
+  const ratio = 800 / 300;
+  canvas.width = parentWidth;
+  canvas.height = parentWidth / ratio;
+  scale = canvas.height / 300;
+  maxY = 20 * scale;
+
+  bata.reset();
+  obstacles.forEach((obs) => obs.rescale());
+}
+window.addEventListener("resize", resizeCanvas);
+resizeCanvas();
 
 const bata = {
   x: 50,
@@ -28,9 +44,11 @@ const bata = {
   height: 60,
   yVelocity: 0,
   isJumping: false,
+
   draw() {
-    ctx.drawImage(bataImage, this.x, this.y, this.width, this.height);
+    ctx.drawImage(bataImg, this.x, this.y, this.width, this.height);
   },
+
   update() {
     this.y += this.yVelocity;
     this.yVelocity += gravity;
@@ -40,37 +58,49 @@ const bata = {
       this.yVelocity = 0;
     }
 
-    if (this.y + this.height >= canvas.height - 10) {
-      this.y = canvas.height - this.height - 10;
+    const groundY = canvas.height - this.height - 10 * scale;
+    if (this.y >= groundY) {
+      this.y = groundY;
       this.isJumping = false;
     }
 
     this.draw();
   },
+
   jump() {
     if (!this.isJumping) {
       this.yVelocity = jumpForce;
       this.isJumping = true;
     }
   },
+
   reset() {
-    this.y = canvas.height - this.height - 10;
+    this.width = 40 * scale;
+    this.height = 60 * scale;
+    this.y = canvas.height - this.height - 10 * scale;
     this.yVelocity = 0;
     this.isJumping = false;
   }
 };
 
 class Obstacle {
-  constructor(height, speed) {
-    this.width = 30;
-    this.height = height;
-    this.x = canvas.width;
-    this.y = canvas.height - this.height - 10;
+  constructor(heightRatio, speed) {
+    this.heightRatio = heightRatio;
     this.speed = speed;
+    this.rescale();
   }
+
+  rescale() {
+    this.width = 30 * scale;
+    this.height = this.heightRatio * canvas.height;
+    this.x = canvas.width;
+    this.y = canvas.height - this.height - 10 * scale;
+  }
+
   draw() {
-    ctx.drawImage(cihlaImage, this.x, this.y, this.width, this.height);
+    ctx.drawImage(cihlaImg, this.x, this.y, this.width, this.height);
   }
+
   update() {
     this.x -= this.speed;
     this.draw();
@@ -78,8 +108,8 @@ class Obstacle {
 }
 
 function spawnObstacle() {
-  let height = 30;
-  obstacles.push(new Obstacle(height, gameSpeed));
+  const heightRatio = 0.1; // vždy nízké překážky
+  obstacles.push(new Obstacle(heightRatio, gameSpeed));
 }
 
 function detectCollision(rect1, rect2) {
@@ -93,11 +123,10 @@ function detectCollision(rect1, rect2) {
 
 function gameLoop() {
   if (!gameRunning) return;
-
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   scoreFrameCounter++;
-  if (scoreFrameCounter % 15 === 0) {
+  if (scoreFrameCounter % 20 === 0) {
     score++;
     document.getElementById("score").textContent = score;
   }
@@ -140,13 +169,14 @@ function startGame() {
   canvas.style.display = "block";
   document.getElementById("scoreDisplay").style.display = "block";
 
+  resizeCanvas();
+
   obstacles = [];
   spawnTimer = 0;
   score = 0;
   scoreFrameCounter = 0;
   framesSinceStart = 0;
   gameSpeed = 1.5;
-
   bata.reset();
   gameRunning = true;
   gameLoop();
