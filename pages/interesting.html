@@ -59,21 +59,24 @@
         </section>
         <section class="bata-minigame">
             <div class="minigame-placeholder">
-                <div id="startScreen">
-                    <h1>🏃‍♂️ Tomáš Baťa Run</h1>
-                    <p>Přeskoč cihly! Klepni nebo zmáčkni mezerník pro skok.</p>
-                    <button onclick="startGame()">Start</button>
-                </div>
-                <div id="scoreDisplay">
-                    Skóre: <span id="score">0</span> | 🥇 High Score: <span id="highScore">0</span>
-                </div>
-                <canvas id="gameCanvas" width="800" height="300"></canvas>
-                <div id="gameOverScreen" style="display: none;">
-                    <h2>💥 Tomáš spadl!</h2>
-                    <p>Tvé skóre: <span id="finalScore">0</span></p>
-                    <p>🥇 Nejlepší skóre: <span id="finalHighScore">0</span></p>
-                    <button onclick="restartGame()">Hrát znovu</button>
-                </div>
+            <div id="startScreen">
+                <h1>🏃‍♂️ Tomáš Baťa Run</h1>
+                <p>Přeskoč cihly! Klepni nebo zmáčkni mezerník pro skok.</p>
+                <button onclick="startGame()">Start</button>
+            </div>
+
+            <div id="scoreDisplay">
+                Skóre: <span id="score">0</span> | 🥇 High Score: <span id="highScore">0</span>
+            </div>
+
+            <canvas id="gameCanvas"></canvas>
+
+            <div id="gameOverScreen" style="display: none;">
+                <h2>💥 Tomáš spadl!</h2>
+                <p>Tvé skóre: <span id="finalScore">0</span></p>
+                <p>🥇 Nejlepší skóre: <span id="finalHighScore">0</span></p>
+                <button onclick="restartGame()">Hrát znovu</button>
+            </div>
             </div>
         </section>
     </main>
