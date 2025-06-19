@@ -12,5 +12,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: kocicka.endora.cz
-        username: bataskolahyscz
+        username: bataskolahyscz@bataskola.hys.cz
         password: Ab123456789
