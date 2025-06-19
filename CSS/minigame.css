@@ -2,7 +2,13 @@
   display: flex;
   justify-content: center;
   padding: 2rem 1rem;
-  margin-top: 450px;
+  margin-top: 470px;
+}
+
+@media (max-width: 425px) {
+  .bata-minigame {
+    margin-top: 250px;
+  }
 }
 
 .minigame-placeholder {
@@ -15,9 +21,10 @@
 #gameCanvas {
   width: 100%;
   height: auto;
-  background: #f0f0f0;
-  border: 2px solid #000;
+  background: var(--custom-background);
   display: none;
+  box-shadow: var(--custom-shadow);
+  border-radius: 10px;
 }
 
 #startScreen,
@@ -30,6 +37,10 @@ button {
   font-size: 18px;
   cursor: pointer;
   margin-top: 20px;
+  background-color: var(--custom-background);
+  border: none;
+  border-radius: 10px;
+  box-shadow: var(--custom-shadow);
 }
 
 #scoreDisplay {

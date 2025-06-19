@@ -37,8 +37,8 @@ resizeCanvas();
 const bata = {
   x: 50 * scale,
   y: 0,
-  width: 40 * scale,
-  height: 60 * scale,
+  width: 30 * scale,
+  height: 65 * scale,
   yVelocity: 0,
   isJumping: false,
 
@@ -77,8 +77,8 @@ const bata = {
   },
 
   reset() {
-    this.width = 40 * scale;
-    this.height = 60 * scale;
+    this.width = 30 * scale;
+    this.height = 65 * scale;
     this.x = 50 * scale;
     this.y = canvas.height - this.height - 10 * scale;
     this.yVelocity = 0;
@@ -94,7 +94,7 @@ class Obstacle {
   }
 
   rescale() {
-    this.width = 30 * scale;
+    this.width = 40 * scale;
     this.height = this.heightRatio * canvas.height;
     this.x = canvas.width;
     this.y = canvas.height - this.height - 10 * scale;

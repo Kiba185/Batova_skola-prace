@@ -300,10 +300,22 @@
         top: 25%;
     }
 
+    .timeline-item h3 {
+        font-size: 20px;
+        width: 200%;
+    }
+
 }
 
 @media (max-width: 768px) {
 
+    .ham-left {
+        width: 50%;
+    }
+
+    .ham-right {
+        width: 50%;
+    }
 
     .present-pillars {
         top:20%;
@@ -325,7 +337,7 @@
     }
     
     .timeline-list h3 {
-        font-size: 22px;
+        font-size: 18px;
         width: 150%;
     }
 
@@ -393,7 +405,7 @@
     .interesting-box {
         height: 20%;
         width: 70%;
-        top: 32%;
+        top: 20%;
     }
 
     .gallery {
@@ -404,4 +416,58 @@
         width: 85%;
         height: 40%;
     }
+}
+
+@media (max-width: 425px) {
+
+    .heading h1{
+        font-size: 60px;
+    }
+
+    .introduction h2 {
+        font-size: 40px;
+    }
+
+    .introduction p {
+        font-size: 16px;
+    }
+
+    .present-pillars {
+        top: 20%;
+    }
+
+    .present .subpage {
+        height: 2100px;
+    }
+
+    .personalities-grid {
+        grid-template-columns: 100%;
+        top: 5%;
+    }
+
+    .personalities .subpage {
+        height: 2500px;
+    }
+
+    .pillar-card {
+        width: 90%;
+    }
+
+    footer p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    .interesting-box {
+        top: 15%;
+    }
+
+    .interesting .subpage {
+        height: 1100px;
+    }
+    
+    .interesting-quote-box p {
+        font-size: 16px;
+    }
+
 }
