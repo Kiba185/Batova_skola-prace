@@ -1,24 +1,16 @@
-name: Deploy to Endora FTP
-
-on:
-  push:
-    branches:
-      - main  # spusť akci při pushi na větev main
-
+on: push
+name: 🚀 Deploy website on push
 jobs:
-  ftp-deploy:
-    name: Upload files to Endora
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Deploy to Endora via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: kocicka.endora.cz
-          username: bataskolahyscz
-          password: Qwertz123.
-          protocol: ftp
-          server-dir: /web/  # změníš podle toho, kam to má na Endoře nahrávat
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: kocicka.endora.cz
+        username: bataskolahyscz
+        password: Ab123456789
