@@ -860,17 +860,17 @@ input[type=range] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(59, 59, 59, 0.7);
   border: none;
-  font-size: 2rem;
+  font-size: 3rem;
   cursor: pointer;
   padding: 0.5rem 1rem;
   z-index: 2;
+  background: transparent;
   transition: background 0.3s ease;
+  color: var(--yellow);
 }
 
 .carousel-btn:hover {
-  background: rgba(134, 134, 134, 0.7);
 }
 
 .carousel-btn.prev {
