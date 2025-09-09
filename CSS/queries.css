@@ -204,11 +204,12 @@
 
     .timeline-list :nth-child(even) h3{
         text-align: left;
-        right: -60%;
+        right: -110%;
     }
 
     .timeline-list :nth-child(odd) h3{
         text-align: left;
+        right: -110%;
     }
 
     .timeline-list p {
@@ -255,6 +256,12 @@
         width: 43%;
         height: 10%;
         font-size: 20px;
+    }
+
+    .timeline-item h3 {
+        width: 200%;
+        top: 0;
+
     }
 
 }

@@ -269,7 +269,7 @@ main {
 .introduction h2{
     width: 100%;
     font-size: 90px;
-    color: var(--white);
+    color: var(--yellow);
     text-align: center;
     font-weight: 900;
     text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
@@ -318,7 +318,7 @@ main {
 .timeline h3 {
     font-family: var(--main-font);
     font-size: 27px;
-      font-weight: bold;
+    font-weight: bold;
 }
 
 .timeline-list {
@@ -343,8 +343,9 @@ main {
 
 .timeline-item h3 {
   position: absolute;
-  width: 150%;
+  width: 100%;
   font-weight: 600;
+  top: -15%;
     
 }
 
