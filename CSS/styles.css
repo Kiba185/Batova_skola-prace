@@ -292,13 +292,13 @@ main {
 /* --- history.html --- */
 
 .history {
-    height: 2800px;
+    height: 4000px;
 }
 
 .timeline {
     position: relative;
     width: 75%;
-    height: 72%;
+    height: 80%;
     margin: auto;
     top: 10%;
 }
@@ -332,11 +332,12 @@ main {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+    z-index: 2;
 }
 
 .timeline-item {
     position: relative;
-    width: 43%;
+    width: 50%;
     height: 10%;
     font-size: 20px;
 }
@@ -345,8 +346,7 @@ main {
   position: absolute;
   width: 100%;
   font-weight: 600;
-  top: -15%;
-    
+  top: -1.7%;
 }
 
 .timeline-list :nth-child(odd){
@@ -367,7 +367,7 @@ main {
 
 .timeline-list :nth-child(even) h3{
     text-align: right;
-    right: 0;
+    right: 12%;
 }
 
 /* --- texty na levé straně --- */
@@ -379,6 +379,7 @@ main {
 
 .timeline-list :nth-child(odd) h3{
     text-align: left;
+    left: 12%;
 }
 
 .timeline-list p {
@@ -391,19 +392,28 @@ main {
 
 .timeline-image {
     position: absolute;
-    width: 50%;
+    width: 45%;
     top: 22%;
     box-shadow: var(--custom-shadow);
+    transition: all 0.5s ease;
 }
 
 /* --- obrázeky na pravé straně --- */
 .timeline-list :nth-child(even) .timeline-image {
-    right: 8%;
+    right: 12%;
+}
+.timeline-list :nth-child(even) .timeline-image:hover {
+  right: 2.5%;
+  width: 55%;
 }
 
 /* --- obrázeky na levé straně --- */
 .timeline-list :nth-child(odd) .timeline-image {
-    left: 8%;
+    left: 12%;
+}
+.timeline-list :nth-child(odd) .timeline-image:hover {
+  left: 2.5%;
+  width: 55%;
 }
 
 .timeline-graph {
@@ -429,9 +439,9 @@ main {
 .timeline-graph :nth-child(2) {
     height: 5px;
     background-color: var(--white);
-    top: 1.5%;
+    top: 1.15%;
     left: 50%;
-    width: 41.5%;
+    width: 33%;
 }
 .timeline-graph :nth-child(3) {
     height: 5px;
@@ -443,16 +453,16 @@ main {
 .timeline-graph :nth-child(4) {
     height: 5px;
     background-color: var(--white);
-    top: 18.5%;
+    top: 17.8%;
     left: 50%;
-    width: 35.5%;
+    width: 33%;
 }
 .timeline-graph :nth-child(5) {
     height: 5px;
     background-color: var(--white);
-    top: 26.5%;
+    top: 26.15%;
     right: 50%;
-    width: 25.2%;
+    width: 33%;
 }
 .timeline-graph :nth-child(6) {
     height: 5px;
@@ -464,49 +474,49 @@ main {
 .timeline-graph :nth-child(7) {
     height: 5px;
     background-color: var(--white);
-    top: 42.5%;
+    top: 42.8%;
     right: 50%;
     width: 28%;
 }
 .timeline-graph :nth-child(8) {
     height: 5px;
     background-color: var(--white);
-    top: 50.5%;
+    top: 51.1%;
     left: 50%;
     width: 34.4%;
 }
 .timeline-graph :nth-child(9) {
     height: 5px;
     background-color: var(--white);
-    top: 58.5%;
+    top: 59.44%;
     right: 50%;
     width: 32.7%;
 }
 .timeline-graph :nth-child(10) {
     height: 5px;
     background-color: var(--white);
-    top: 66.5%;
-    right: 50%;
+    top: 67.74%;
+    left: 50%;
     width: 32.7%;
 }
 .timeline-graph :nth-child(11) {
     height: 5px;
     background-color: var(--white);
-    top: 74.5%;
+    top: 76.09%;
     right: 50%;
     width: 32.7%;
 }
 .timeline-graph :nth-child(12) {
     height: 5px;
     background-color: var(--white);
-    top: 82.5%;
-    right: 50%;
+    top: 84.39%;
+    left: 50%;
     width: 32.7%;
 }
 .timeline-graph :nth-child(13) {
     height: 5px;
     background-color: var(--white);
-    top: 90.5%;
+    top: 92.73%;
     right: 50%;
     width: 32.7%;
 }
@@ -842,7 +852,7 @@ input[type=range] {
 /*----- galery.html -----*/
 
 .gallery {
-  height: 1200px;
+  height: 1400px;
 }
 
 .carousel-container {
@@ -897,9 +907,6 @@ input[type=range] {
   background: transparent;
   transition: background 0.3s ease;
   color: var(--yellow);
-}
-
-.carousel-btn:hover {
 }
 
 .carousel-btn.prev {
