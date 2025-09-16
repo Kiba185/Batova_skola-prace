@@ -22,4 +22,4 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./                
-          server-dir: /bataskola.hys.cz/web/
+          server-dir: /
