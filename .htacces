@@ -1,6 +1,11 @@
-# Přesměruje root na pages/index.html
+# Zapnutí přepisování URL
+RewriteEngine On
+
+# Přesměruje root "/" na pages/index.html
+RewriteRule ^$ pages/index.html [L]
+
+# Nastaví pages/index.html jako výchozí pro adresáře
 DirectoryIndex pages/index.html
 
-# Volitelně: trvalé přesměrování všech požadavků na pages
-# RewriteEngine On
-# RewriteRule ^$ pages/index.html [L]
+# Zachování normálního přístupu ke složkám CSS, JS, images
+# (žádné přesměrování tam není, soubory se načítají přímo)
