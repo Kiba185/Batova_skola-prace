@@ -297,7 +297,7 @@ main {
 
 .timeline {
     position: relative;
-    width: 75%;
+    width: 85%;
     height: 80%;
     margin: auto;
     top: 10%;
@@ -344,9 +344,8 @@ main {
 
 .timeline-item h3 {
   position: absolute;
-  width: 100%;
   font-weight: 600;
-
+  white-space: nowrap;
 }
 
 .timeline-list :nth-child(odd){
@@ -367,7 +366,7 @@ main {
 
 .timeline-list :nth-child(even) .headline-year{
   text-align: right;
-  right: 2%;
+  right: 10px;
   font-size: 32px;
   top: -3%;
 
@@ -375,7 +374,7 @@ main {
 
 .timeline-list :nth-child(even) .headline{
   text-align: right;
-  right: 17%;
+  right: 130px;
   top: -1%;
 }
 
@@ -388,7 +387,7 @@ main {
 
 .timeline-list :nth-child(odd) .headline-year{
   text-align: left;
-  left: 2%;
+  left: 20px;
   font-size: 32px;
   top: -3%;
 
@@ -396,7 +395,7 @@ main {
 
 .timeline-list :nth-child(odd) .headline{
   text-align: left;
-  left: 17%;
+  left: 130px;
   top: -1%;
 }
 
