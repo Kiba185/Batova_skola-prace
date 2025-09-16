@@ -336,10 +336,10 @@ main {
 }
 
 .timeline-item {
-    position: relative;
-    width: 50%;
-    height: 10%;
-    font-size: 20px;
+  position: relative;
+  width: 50%;
+  height: 10%;
+  font-size: 20px;
 }
 
 .timeline-item h3 {
