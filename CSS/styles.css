@@ -278,15 +278,15 @@ main {
 }
 
 .introduction p{
-    width: 70%;
-    top:30%;
-    font-size: 25px;
-    color: var(--white);
-    font-family: var(--main-font);
-    text-align: center;
-    font-weight: 900;
-    text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
-    margin: 100px auto;
+  width: 70%;
+  top:30%;
+  font-size: 25px;
+  color: var(--white);
+  font-family: var(--main-font);
+  text-align: center;
+  font-weight: 900;
+  text-shadow: 0 0 60px rgba(110, 110, 110, 0.13);
+  margin: 100px auto;
 }
 
 /* --- history.html --- */
@@ -316,9 +316,9 @@ main {
 }
 
 .timeline h3 {
-    font-family: var(--main-font);
-    font-size: 27px;
-    font-weight: bold;
+  font-family: var(--main-font);
+  font-size: 27px;
+  font-weight: bold;
 }
 
 .timeline-list {
