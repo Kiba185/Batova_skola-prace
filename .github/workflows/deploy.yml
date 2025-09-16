@@ -1,16 +1,25 @@
-on: push
-name: Deploy website on push
+name: Deploy to Endora
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  web-deploy:
-    name: Deploy
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-    - name: Get latest code
-      uses: actions/checkout@v4
-    
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: "kocicka.endora.cz"
-        username: "bataskolahyscz@bataskola.hys.cz"
-        password: "Ab123456789"
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Upload to Endora FTP
+        uses: SamKirkland/FTP-Deploy-Action@4.3.4
+        with:
+          server: kocicka.endora.cz
+          username: bataskolahyscz
+          password: Ab1234567890
+          protocol: ftp
+          port: 21
+          local-dir: ./                
+          server-dir: /bataskola.hys.cz/web/
