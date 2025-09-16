@@ -1,0 +1,6 @@
+# Přesměruje root na pages/index.html
+DirectoryIndex pages/index.html
+
+# Volitelně: trvalé přesměrování všech požadavků na pages
+# RewriteEngine On
+# RewriteRule ^$ pages/index.html [L]
