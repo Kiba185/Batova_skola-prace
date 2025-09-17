@@ -41,6 +41,7 @@ button {
   border: none;
   border-radius: 10px;
   box-shadow: var(--custom-shadow);
+  color: var(--white);
 }
 
 #scoreDisplay {
