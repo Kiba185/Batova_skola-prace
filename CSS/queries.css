@@ -1,5 +1,4 @@
 
-
 @media (max-width: 1400px) {
     .header-nav {
         font-size: 25px;
@@ -87,12 +86,6 @@
         flex-direction: column;
     }
 
-    .hotspot {
-        width: 18px;
-        height: 18px;
-
-    }
-
     .introduction p {
         width: 90%;
     }
@@ -101,6 +94,7 @@
         top: 12%;
     }
 /* --- history page --- */
+
 
     .timeline-graph {
         position: relative;
@@ -284,6 +278,11 @@
 }
 
 @media (max-width: 1024px) {
+
+    .history {
+        height: 580dvh;
+    }
+
     .introduction h2 {
         font-size: 60px;
     }
@@ -328,6 +327,11 @@
 }
 
 @media (max-width: 800px) {
+
+        .history {
+        height: 600dvh;
+    }
+
 
     .ham-left {
         width: 50%;
@@ -450,6 +454,10 @@
 
 @media (max-width: 670px) {
 
+    .history {
+        height: 700dvh;
+    }
+ 
     .header-nav {
         font-size: 20px;
         height: 80px;
@@ -515,6 +523,11 @@
 }
 
 @media (max-width: 425px) {
+
+        .history {
+        height: 800dvh;
+    }
+
 
     .heading h1{
         font-size: 60px;

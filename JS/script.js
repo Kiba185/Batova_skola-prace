@@ -167,7 +167,7 @@ function showPerson(key) {
   const person = persons[key];
   if (!person) return;
 
-  document.getElementById("person-card-" + key).style.height = "500px";
+  document.getElementById("person-card-" + key).style.height = "50dvh";
   document.getElementById("person-card-" + key).style.backgroundColor = "rgb(15, 15, 15)";
   document.getElementById("person-img-" + key).style.height = "100%";
   document.getElementById("person-img-" + key).style.width = "100%";
@@ -177,7 +177,7 @@ function showPerson(key) {
   document.getElementById("person-name-" + key).style.left = "50%";
   document.getElementById("person-name-" + key).style.transform = "translateX(-50%)";
   document.getElementById("person-name-" + key).style.width = "80%";
-  document.getElementById("person-name-" + key).style.fontSize = "35px";
+  document.getElementById("person-name-" + key).style.fontSize = "4vh";
   document.getElementById("person-description-" + key).textContent = person.description;
   document.getElementById("person-description-" + key).style.display = "block";
 }
