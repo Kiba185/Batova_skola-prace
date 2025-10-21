@@ -24,5 +24,5 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./               # root tvého repa
-          server-dir: /home/html/bataskola.hys.cz/ # root složka na Endoře
+          server-dir: /bataskola.hys.cz/ # root složka na Endoře
           git-ftp-args: --insecure   # pokud by byl problém s certifikáty
