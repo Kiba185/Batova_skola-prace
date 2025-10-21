@@ -5,210 +5,154 @@ let gameRunning = false;
 let gameSpeed = 2;
 let gravity = 0.3;
 let jumpForce = -9.5;
-let spawnTimer = 0;
 let obstacles = [];
-let framesSinceStart = 0;
+let shoes = [];
 let score = 0;
-let scoreFrameCounter = 0;
+let username = "";
 let highScore = localStorage.getItem("highScore") || 0;
-const maxYBase = 20;
-
 document.getElementById("highScore").textContent = highScore;
 
-// Načtení obrázků
-const bataImg = new Image();
-bataImg.src = '../images/bata.png';
+// Obrázky
+const bataImg = new Image(); bataImg.src = "../images/bata.png";
+const cihlaImg = new Image(); cihlaImg.src = "../images/cihla.png";
+const shoeImg = new Image(); shoeImg.src = "../images/bota.png";
 
-const cihlaImg = new Image();
-cihlaImg.src = '../images/cihla.png';
-
-let scale = 1;
-
+// Poměr plátna
 function resizeCanvas() {
   const parentWidth = canvas.parentElement.clientWidth;
   const ratio = 800 / 300;
   canvas.width = parentWidth;
   canvas.height = parentWidth / ratio;
-  scale = canvas.height / 300;
 }
 window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 
 const bata = {
-  x: 50 * scale,
-  y: 0,
-  width: 30 * scale,
-  height: 65 * scale,
-  yVelocity: 0,
-  isJumping: false,
-
-  draw() {
-    if (bataImg.complete && bataImg.naturalWidth > 0) {
-      ctx.drawImage(bataImg, this.x, this.y, this.width, this.height);
-    } else {
-      ctx.fillStyle = "black";
-      ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-  },
-
+  x: 50, y: 0, width: 40, height: 60, yVelocity: 0, isJumping: false,
+  draw() { ctx.drawImage(bataImg, this.x, this.y, this.width, this.height); },
   update() {
     this.y += this.yVelocity;
     this.yVelocity += gravity;
-
-    const maxY = maxYBase * scale;
-    if (this.y < maxY) {
-      this.y = maxY;
-      this.yVelocity = 0;
-    }
-
-    if (this.y + this.height >= canvas.height - 10 * scale) {
-      this.y = canvas.height - this.height - 10 * scale;
+    if (this.y + this.height >= canvas.height - 10) {
+      this.y = canvas.height - this.height - 10;
       this.isJumping = false;
     }
-
     this.draw();
   },
-
-  jump() {
-    if (!this.isJumping) {
-      this.yVelocity = jumpForce;
-      this.isJumping = true;
-    }
-  },
-
-  reset() {
-    this.width = 30 * scale;
-    this.height = 65 * scale;
-    this.x = 50 * scale;
-    this.y = canvas.height - this.height - 10 * scale;
-    this.yVelocity = 0;
-    this.isJumping = false;
-  }
+  jump() { if (!this.isJumping) { this.yVelocity = jumpForce; this.isJumping = true; } },
+  reset() { this.y = canvas.height - this.height - 10; this.yVelocity = 0; this.isJumping = false; }
 };
 
 class Obstacle {
-  constructor(heightRatio, speed) {
-    this.heightRatio = heightRatio;
-    this.speed = speed;
-    this.rescale();
+  constructor() {
+    this.width = 30; this.height = 30;
+    this.x = canvas.width; this.y = canvas.height - this.height - 10;
   }
+  draw() { ctx.drawImage(cihlaImg, this.x, this.y, this.width, this.height); }
+  update() { this.x -= gameSpeed; this.draw(); }
+}
 
-  rescale() {
-    this.width = 40 * scale;
-    this.height = this.heightRatio * canvas.height;
+class Shoe {
+  constructor() {
+    this.width = 25; this.height = 25;
     this.x = canvas.width;
-    this.y = canvas.height - this.height - 10 * scale;
+    this.y = Math.random() * (canvas.height / 2) + 50;
   }
-
-  draw() {
-    if (cihlaImg.complete && cihlaImg.naturalWidth > 0) {
-      ctx.drawImage(cihlaImg, this.x, this.y, this.width, this.height);
-    } else {
-      ctx.fillStyle = "red";
-      ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-  }
-
-  update() {
-    this.x -= this.speed;
-    this.draw();
-  }
+  draw() { ctx.drawImage(shoeImg, this.x, this.y, this.width, this.height); }
+  update() { this.x -= gameSpeed; this.draw(); }
 }
 
-function spawnObstacle() {
-  // překážky cca 10% výšky canvasu
-  const heightRatio = 0.1;
-  obstacles.push(new Obstacle(heightRatio, gameSpeed));
+function detectCollision(a, b) {
+  return a.x < b.x + b.width &&
+         a.x + a.width > b.x &&
+         a.y < b.y + b.height &&
+         a.y + a.height > b.y;
 }
 
-function detectCollision(rect1, rect2) {
-  return (
-    rect1.x < rect2.x + rect2.width &&
-    rect1.x + rect1.width > rect2.x &&
-    rect1.y < rect2.y + rect2.height &&
-    rect1.y + rect1.height > rect2.y
-  );
+function spawnObjects() {
+  if (Math.random() < 0.02) obstacles.push(new Obstacle());
+  if (Math.random() < 0.01) shoes.push(new Shoe());
 }
 
 function gameLoop() {
   if (!gameRunning) return;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  scoreFrameCounter++;
-  if (scoreFrameCounter % 20 === 0) {
-    score++;
-    document.getElementById("score").textContent = score;
-  }
-
-  framesSinceStart++;
-  if (framesSinceStart % 150 === 0) {
-    gameSpeed += 0.1;
-  }
-
   bata.update();
-
-  if (spawnTimer <= 0) {
-    spawnObstacle();
-    spawnTimer = Math.random() * 120 + 120;
-  } else {
-    spawnTimer--;
-  }
+  spawnObjects();
 
   for (let i = obstacles.length - 1; i >= 0; i--) {
-    const obs = obstacles[i];
-    obs.speed = gameSpeed;
-    obs.update();
+    obstacles[i].update();
+    if (detectCollision(bata, obstacles[i])) endGame();
+    if (obstacles[i].x + obstacles[i].width < 0) obstacles.splice(i, 1);
+  }
 
-    if (detectCollision(bata, obs)) {
-      endGame();
-      return;
+  for (let i = shoes.length - 1; i >= 0; i--) {
+    shoes[i].update();
+    if (detectCollision(bata, shoes[i])) {
+      shoes.splice(i, 1);
+      score++;
+      document.getElementById("score").textContent = score;
     }
-
-    if (obs.x + obs.width < 0) {
-      obstacles.splice(i, 1);
-    }
+    if (shoes[i].x + shoes[i].width < 0) shoes.splice(i, 1);
   }
 
   requestAnimationFrame(gameLoop);
 }
 
 function startGame() {
-  document.getElementById("startScreen").style.display = "none";
-  document.getElementById("gameOverScreen").style.display = "none";
-  canvas.style.display = "block";
-  document.getElementById("scoreDisplay").style.display = "block";
+  username = document.getElementById("playerName").value.trim();
+  if (!username) return alert("Zadej své jméno!");
 
-  resizeCanvas();
+  document.getElementById("startScreen").style.display = "none";
+  document.getElementById("scoreDisplay").style.display = "block";
+  canvas.style.display = "block";
 
   obstacles = [];
-  spawnTimer = 0;
+  shoes = [];
   score = 0;
-  scoreFrameCounter = 0;
-  framesSinceStart = 0;
-  gameSpeed = 1.5;
   bata.reset();
   gameRunning = true;
   gameLoop();
 }
 
-function endGame() {
+async function endGame() {
   gameRunning = false;
-  canvas.style.display = "none";
   document.getElementById("scoreDisplay").style.display = "none";
   document.getElementById("gameOverScreen").style.display = "block";
   document.getElementById("finalScore").textContent = score;
 
-  if (score > highScore) {
-    highScore = score;
-    localStorage.setItem("highScore", highScore);
-  }
+  await fetch("https://bataskola.hys.cz/api/save_score.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, score })
+  });
 
-  document.getElementById("highScore").textContent = highScore;
-  document.getElementById("finalHighScore").textContent = highScore;
+  loadLeaderboard();
+}
+
+async function loadLeaderboard() {
+  const res = await fetch("https://bataskola.hys.cz/api/save_score.php");
+  const data = await res.json();
+  const list = document.getElementById("leaderboardList");
+  list.innerHTML = "";
+  data.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = `${item.username}: ${item.score}`;
+    list.appendChild(li);
+  });
 }
 
 function restartGame() {
-  startGame();
+  document.getElementById("gameOverScreen").style.display = "none";
+  document.getElementById("scoreDisplay").style.display = "block";
+  canvas.style.display = "block";
+  obstacles = [];
+  shoes = [];
+  score = 0;
+  bata.reset();
+  gameRunning = true;
+  gameLoop();
 }
 
 document.addEventListener("keydown", (e) => {
@@ -217,8 +161,6 @@ document.addEventListener("keydown", (e) => {
     bata.jump();
   }
 });
+document.addEventListener("touchstart", () => bata.jump());
 
-
-document.addEventListener("touchstart", () => {
-  bata.jump();
-});
+loadLeaderboard();
