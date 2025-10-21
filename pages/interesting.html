@@ -59,26 +59,38 @@
         </section>
         <section class="bata-minigame">
             <div class="minigame-placeholder">
-            <div id="startScreen">
-                <h1>🏃‍♂️ Tomáš Baťa Run</h1>
-                <p>Přeskoč cihly! Klepni nebo zmáčkni mezerník pro skok.</p>
-                <button onclick="startGame()">Start</button>
-            </div>
+                <div id="playerNameScreen">
+                    <h2>Zadej své jméno</h2>
+                    <input type="text" id="playerNameInput" placeholder="Jméno">
+                    <button id="playerNameSubmit">Start Hry</button>
+                </div>
 
-            <div id="scoreDisplay">
-                Skóre: <span id="score">0</span> | 🥇 High Score: <span id="highScore">0</span>
-            </div>
+                <div id="startScreen" style="display:none;">
+                    <h1>🏃‍♂️ Tomáš Baťa Run</h1>
+                    <p>Přeskoč cihly! Klepni nebo zmáčkni mezerník pro skok.</p>
+                </div>
 
-            <canvas id="gameCanvas"></canvas>
+                <div id="scoreDisplay" style="display:none;">
+                    Skóre: <span id="score">0</span> | 🥇 High Score: <span id="highScore">0</span>
+                </div>
 
-            <div id="gameOverScreen" style="display: none;">
-                <h2>💥 Tomáš spadl!</h2>
-                <p>Tvé skóre: <span id="finalScore">0</span></p>
-                <p>🥇 Nejlepší skóre: <span id="finalHighScore">0</span></p>
-                <button onclick="restartGame()">Hrát znovu</button>
-            </div>
+                <canvas id="gameCanvas"></canvas>
+
+                <div id="gameOverScreen" style="display: none;">
+                    <h2>💥 Tomáš spadl!</h2>
+                    <p>Tvé skóre: <span id="finalScore">0</span></p>
+                    <p>🥇 Nejlepší skóre: <span id="finalHighScore">0</span></p>
+                    <button id="restartBtn">Hrát znovu</button>
+                </div>
+
+                <div id="leaderboard">
+                    <h2>🏆 Top 10 hráčů</h2>
+                    <ul id="leaderboardList"></ul>
+                </div>
             </div>
         </section>
+
+
     </main>
     <footer>
         <nav class="footer-nav">

@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Stáhne obsah repozitáře
+      # 1️ Stáhne obsah repozitáře
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # 2️⃣ Nahraje soubory na Endora FTP
+      # 2️ Nahraje soubory na Endora FTP
       - name: Upload to Endora FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
@@ -24,5 +24,5 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./               # root tvého repa
-          server-dir: /bataskola.hys.cz/web/  # root složka na Endoře
+          server-dir: /bataskola.hys.cz/public_html/  # root složka na Endoře
           git-ftp-args: --insecure   # pokud by byl problém s certifikáty
