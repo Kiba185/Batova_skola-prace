@@ -5,6 +5,7 @@ on:
     branches:
       - main  # nebo master
 
+      
 jobs:
   deploy:
     runs-on: ubuntu-latest
