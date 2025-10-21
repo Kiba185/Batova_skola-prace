@@ -5,7 +5,7 @@ on:
     branches:
       - main  # nebo master
 
-      
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,5 +24,5 @@ jobs:
           protocol: ftp
           port: 21
           local-dir: ./               # root tvého repa
-          server-dir: /home/html/bataskola.hys.cz/public_html/  # root složka na Endoře
+          server-dir: /home/html/bataskola.hys.cz/ # root složka na Endoře
           git-ftp-args: --insecure   # pokud by byl problém s certifikáty
