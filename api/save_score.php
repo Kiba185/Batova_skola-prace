@@ -2,6 +2,7 @@
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 
+
 $servername = "db.db049.endora.cz";
 $username = "bataskola_hys_cz";
 $password = "Qwertz123.";

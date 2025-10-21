@@ -7,6 +7,7 @@ $username = "bataskola_hys_cz";
 $password = "Qwertz123.";
 $dbname = "bataskola.hys.cz";
 
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die(json_encode(["error" => "Connection failed: " . $conn->connect_error]));
