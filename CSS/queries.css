@@ -520,6 +520,10 @@
         font-size: 15px;
     }
 
+    .celebrations.subpage {
+    min-height: 200dvh;
+}
+
 }
 
 @media (max-width: 425px) {

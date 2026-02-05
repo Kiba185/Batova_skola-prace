@@ -144,20 +144,20 @@ const persons = {
     description: "Významný pedagog Baťovy školy práce, který formoval generace studentů.",
     image: "../images/tomasik.jpg"
   },
-    boruvka: {
+  boruvka: {
     name: "Otakar Borůvka",
     description: "Matematik a pedagog, který se podílel na výuce a vývoji vzdělávacích programů v Baťově škole.",
-    image: "images/boruvka.jpg"
+    image: "../images/boruvka.jpg"
   },
   tous: {
     name: "Antonín Touš",
     description: "Dlouholetý ředitel Baťovy školy práce, klíčový organizátor její struktury a rozvoje.",
-    image: "images/tous.jpg"
+    image: "../images/tous.jpg"
   },
   horak: {
     name: "Karel Horák",
     description: "Odborník na výrobu a průmyslovou organizaci, jeden z vedoucích mistrů ve škole.",
-    image: "images/horak.jpg"
+    image: "../images/horak.jpg"
   }
 };
 
@@ -279,3 +279,159 @@ function resetAutoSlide() {
   clearInterval(autoSlideInterval);
   autoSlideInterval = setInterval(nextSlide, 5000);
 }
+
+const articles = {
+  article1: {
+    title: "Baťova škola práce: Revoluce ve vzdělávání",
+    image: "../images/article1.jpg",
+    content: "Baťova škola práce byla průkopnickou institucí, která spojovala teoretické vzdělávání s praktickou zkušeností. Studenti se učili nejen v učebnách, ale i přímo ve výrobních závodech, což jim umožňovalo získat cenné dovednosti a připravit se na reálný pracovní život."
+  },
+  article2: {
+    title: "Baťova škola práce: Revoluce ve vzdělávání",
+    image: "../images/article2.jpg",
+    content: "Baťova škola práce byla průkopnickou institucí, která spojovala teoretické vzdělávání s praktickou zkušeností. Studenti se učili nejen v učebnách, ale i přímo ve výrobních závodech, což jim umožňovalo získat cenné dovednosti a připravit se na reálný pracovní život."
+  },
+  article3: {
+    title: "Baťova škola práce: Revoluce ve vzdělávání",
+    image: "../images/article3.jpg",
+    content: "Baťova škola práce byla průkopnickou institucí, která spojovala teoretické vzdělávání s praktickou zkušeností. Studenti se učili nejen v učebnách, ale i přímo ve výrobních závodech, což jim umožňovalo získat cenné dovednosti a připravit se na reálný pracovní život."
+  },
+  article4: {
+    title: "Baťova škola práce: Revoluce ve vzdělávání",
+    image: "../images/article4.jpg",
+    content: "Baťova škola práce byla průkopnickou institucí, která spojovala teoretické vzdělávání s praktickou zkušeností. Studenti se učili nejen v učebnách, ale i přímo ve výrobních závodech, což jim umožňovalo získat cenné dovednosti a připravit se na reálný pracovní život."
+  },
+  article5: {
+    title: "Baťova škola práce: Revoluce ve vzdělávání",
+    image: "../images/article5.jpg",
+    content: "Baťova škola práce byla průkopnickou institucí, která spojovala teoretické vzdělávání s praktickou zkušeností. Studenti se učili nejen v učebnách, ale i přímo ve výrobních závodech, což jim umožňovalo získat cenné dovednosti a připravit se na reálný pracovní život."
+  },
+}
+
+function showArticle(key) {
+  const article = articles[key];
+  if (!article) return;
+
+  document.getElementById("article-title").textContent = article.title;
+  document.getElementById("article-image").src = article.image;
+  document.getElementById("article-content").textContent = article.content;
+  document.getElementById("article-section").style.display = "block";
+}
+
+function closeArticle() {
+  document.getElementById("article-section").style.display = "none";
+}
+
+// Nový systém pro články na hlavní stránce
+const mainPageArticles = [
+  {
+    id: 'article1',
+    title: 'Počátky Baťovy školy práce',
+    image: '../images/skola-old.jpg',
+    preview: 'Baťova škola práce byla založena v roce 1925 jako průkopnická instituce, která spojovala vzdělávání s praktickou praxí...',
+    content: 'Baťova škola práce byla založena v roce 1925 Tomášem Baťou jako průkopnická instituce, která spojovala vzdělávání s praktickou praxí. Myšlenka vycházela z přesvědčení, že nejlepší způsob, jak připravit mladou generaci na pracovní život, je kombinovat teoretické znalosti s praktickou zkušeností přímo ve výrobě. Studenti získávali nejen technické dovednosti, ale i pracovní zákazy a podnikavost. Tento systém byl na svou dobu velmi moderní a revolucionářský.'
+  },
+  {
+    id: 'article2',
+    title: 'Vzdělávací program a metodika',
+    image: '../images/hlavni-budova.jpg',
+    preview: 'Program školy byl speciálně navržen tak, aby kombinoval teorii s praktickou výrobou. Studenti trávili část dne...',
+    content: 'Program školy byl speciálně navržen tak, aby kombinoval teorii s praktickou výrobou. Studenti trávili část dne v učebnách, kde se učili matematiku, fyziku, chemii a další předměty, a druhou část pracovali přímo ve výrobních závodech firmy Baťa. Tento přístup umožňoval studentům pochopit praktickou aplikaci teoretických znalostí a připravit se na reálné pracovní problémy. Metodika byla velmi progresivní a předběhla svou dobu.'
+  },
+  {
+    id: 'article3',
+    title: 'Vliv na české školství',
+    image: '../images/internaty.jpg',
+    preview: 'Baťova škola práce měla obrovský vliv na vývoj českého školství. Její inovativní přístup k výuce...',
+    content: 'Baťova škola práce měla obrovský vliv na vývoj českého školství. Její inovativní přístup k výuce inspiroval řadu dalších škol a institucí, aby experimentovaly s kombinací teoretického a praktického vzdělávání. Absolventi školy se stali velmi vyhledávanými pracovníky a řada z nich dosáhla významných pozic v průmyslu. Myšlenky, které Baťa prosazoval, byly předstihem své doby a jejich relevance přetrvává dodnes.'
+  },
+  {
+    id: 'article4',
+    title: 'Sociální aspekt školy',
+    image: '../images/domky.jpg',
+    preview: 'Baťova škola byla součástí širokého sociálního programu, který firma Baťa nabízela svým zaměstnancům...',
+    content: 'Baťova škola byla součástí širokého sociálního programu, který firma Baťa nabízela svým zaměstnancům a jejich rodinám. Škola byla dostupná i pro děti z chudších rodin, což bylo na počátku 20. století velmi progresivní. Firma zajistila bezplatné vzdělávání, stravu a v některých případech i ubytování pro studenty. Tento přístup byla součástí Baťova vidění moderní a spravedlivé společnosti.'
+  },
+  {
+    id: 'article5',
+    title: 'Odkaz a dědictví',
+    image: '../images/tomas_bata.jpg',
+    preview: 'Dnes je Baťova škola práce uznávána jako historická instituce, která ovlivnila vývoj moderního vzdělávání...',
+    content: 'Dnes je Baťova škola práce uznávána jako historická instituce, která ovlivnila vývoj moderního vzdělávání nejen v České republice, ale i v Evropě. Její principy o spojení teorie a praxe, individuálního rozvoje a sociální odpovědnosti zůstávají aktuální. Mnoho moderních vzdělávacích systémů, včetně duálního vzdělávání, staví na základech, které Baťova škola vytvořila. Její dědictví pokračuje v mysli všech, kterých se jejího přínosů dotklo.'
+  }
+];
+
+function initializeArticles() {
+  const container = document.getElementById('articlesContainer');
+  if (!container) return;
+
+  container.innerHTML = '';
+  
+  mainPageArticles.forEach(article => {
+    const articleEl = document.createElement('div');
+    articleEl.className = 'article collapsed';
+    articleEl.dataset.articleId = article.id;
+    
+    articleEl.innerHTML = `
+      <div class="article-header">
+        <div class="article-image-container">
+          <img src="${article.image}" alt="${article.title}">
+        </div>
+        <div class="article-text-section">
+          <h3 class="article-title">${article.title}</h3>
+          <p class="article-preview">${article.preview}</p>
+        </div>
+      </div>
+      <div class="article-content">
+        <p>${article.content}</p>
+      </div>
+    `;
+    
+    articleEl.addEventListener('click', function(e) {
+      e.stopPropagation();
+      toggleArticle(this);
+    });
+    
+    container.appendChild(articleEl);
+  });
+  
+  setTimeout(updateContainerHeight, 100);
+}
+
+function toggleArticle(articleEl) {
+  const container = document.getElementById('articlesContainer');
+  const allArticles = container.querySelectorAll('.article');
+  
+  const isExpanded = articleEl.classList.contains('expanded');
+  
+  allArticles.forEach(article => {
+    article.classList.remove('expanded');
+    article.classList.add('collapsed');
+  });
+  
+  if (!isExpanded) {
+    articleEl.classList.remove('collapsed');
+    articleEl.classList.add('expanded');
+  }
+  
+  updateContainerHeight();
+}
+
+function updateContainerHeight() {
+  const container = document.getElementById('articlesContainer');
+  if (!container) return;
+  
+  let totalHeight = 0;
+  const articles = container.querySelectorAll('.article');
+  
+  articles.forEach(article => {
+    totalHeight += article.offsetHeight;
+  });
+  
+  const gaps = (articles.length - 1) * 20;
+  totalHeight += gaps;
+  
+  container.style.minHeight = totalHeight + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', initializeArticles);
