@@ -1128,22 +1128,4 @@ footer p {
     margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
-    .article-header {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
 
-    .article-image-container {
-        height: 200px;
-    }
-
-    .article.collapsed .article-header {
-        grid-template-columns: 80px 1fr;
-        padding: 10px;
-    }
-
-    .article.collapsed .article-image-container {
-        height: 70px;
-    }
-}
